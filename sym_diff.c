@@ -17,6 +17,7 @@ void sym_diff(int *d1,int *d2,int m,int n){
     printf("\nSymmetric difference of A and B:\n");
     for(i=0;i<l;i++)
     printf("%d ",*(sym+i));
+    printf("\n");
 }
 
 int diff(int *a,int *b,int *d1,int n1, int n2){
