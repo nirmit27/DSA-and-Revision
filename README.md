@@ -1,2 +1,2 @@
 # C_Stuff
-Some C programs
+Some miscellaneous programs.
