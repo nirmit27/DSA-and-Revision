@@ -1,3 +1,4 @@
+// Program to find out the symmetric difference between two sets
 #include<stdio.h>
 // #include<conio.h>
 #include<stdlib.h>
