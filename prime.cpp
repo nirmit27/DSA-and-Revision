@@ -1,27 +1,31 @@
-// Program to calculate the number of prime numbers in a given interval
-#include <bits/stdc++.h> 
-#include <iostream>
+// Program to check whether the number is prime or not
 
+#include<iostream>
+#include<cmath>
 using namespace std;
 
-//Write your totalPrime function here
-int totalPrime(int s, int e){
-    int i,j,count=0;
-    for(i=s;i<=e;i++){
-        for(j=2;j<i;j++){
-            if(i%j==0)
-                break;
+void prime(int n){
+    if(n>1){
+        for(int i=2;i<(sqrt(n)+1);i++){
+            if(n%i==0){
+                cout<<n<<" is not Prime"<<endl;
+                return;
+            }
         }
-        if(j==i)
-            count++;
+    cout<<n<<" is Prime."<<endl;
+    return;
     }
-    return count;
+    else
+    cout<<n<<" is not Prime."<<endl;
+    return;
 }
 
-int main() {
-    int S, E;
-    cout<<"Enter the range: ";
-    cin >> S >> E;
-    cout << totalPrime(S, E);
+int main(int argc, char const *argv[])
+{
+    int num;
+    cout<<"Enter the number to be checked: ";
+    cin>>num;
+    prime(num);
+    getchar();
     return 0;
 }

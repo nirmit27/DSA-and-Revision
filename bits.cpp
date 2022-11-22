@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int countcountits(int n){
+int countBits(int n){
     int count=0;
     while(n){
         count+=n&1;
@@ -17,6 +17,6 @@ int main() {
     int n;
     cout<<"Enter the numcounter: ";
     cin >> n;
-    cout<<countcountits(n);
+    cout<<countBits(n);
     return 0;
 }
