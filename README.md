@@ -1,2 +1,2 @@
 # Time_Pass
-Some miscellaneous programs.
+My path to learning *C++* and a bit of *C* too.

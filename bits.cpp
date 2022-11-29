@@ -1,4 +1,4 @@
-// Program to count the numcounter of 1's in the countinary representation of any numcounter
+// Program to count the numcounter of 1's in the binary representation of any number
 #include <bits/stdc++.h> 
 #include <iostream>
 
@@ -15,7 +15,7 @@ int countBits(int n){
 
 int main() {
     int n;
-    cout<<"Enter the numcounter: ";
+    cout<<"Enter the number: ";
     cin >> n;
     cout<<countBits(n);
     return 0;
