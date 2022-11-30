@@ -43,28 +43,28 @@ int main()
 {
     int real1, imaginary1, real2, imaginary2;
 
-    cout<<"Enter the first complex number: ";
+    cout << "Enter the first complex number: ";
     cin >> real1 >> imaginary1;
-    cout<<"Enter the second complex number: ";
+    cout << "Enter the second complex number: ";
     cin >> real2 >> imaginary2;
 
     ComplexNumbers c1(real1, imaginary1);
     ComplexNumbers c2(real2, imaginary2);
 
     int choice;
-    cout<<"Enter your choice of operation: 1) Sum\t2) Product\n>> ";
+    cout << "Enter your choice of operation: 1) Sum\t2) Product\n>> ";
     cin >> choice;
 
     if (choice == 1)
     {
         c1.plus(c2);
-        cout<<"Sum = ";
+        cout << "Sum = ";
         c1.print();
     }
     else if (choice == 2)
     {
         c1.multiply(c2);
-        cout<<"Product = ";
+        cout << "Product = ";
         c1.print();
     }
     else
