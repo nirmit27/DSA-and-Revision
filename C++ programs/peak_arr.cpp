@@ -23,7 +23,7 @@ int main()
     cout<<"Enter the size: ";
     cin>>n;
 
-    int *arr = new int[n];
+    int *arr = new int[n]; // DMA
     cout<<"Enter the array: ";
     for(i=0;i<n;i++)
         cin>>*(arr+i);
