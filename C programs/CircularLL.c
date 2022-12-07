@@ -1,4 +1,3 @@
-// Program to create a circular linked list and perform insertions and deletions in all cases
 #include <stdio.h>
 // #include<conio.h>
 #include <stdlib.h>
@@ -11,7 +10,6 @@ typedef struct node
 
 cll *start = NULL;
 
-// Create a new node
 cll *getnode()
 {
     cll *node = (cll *)malloc(sizeof(cll));
@@ -20,65 +18,121 @@ cll *getnode()
     node->next = NULL;
 }
 
-// Create a new list
 cll *create_cll(cll *start)
 {
     int num;
-    cll *new = getnode(), *temp;
-    
+    cll *new_node, *temp;
+    printf("\nEnter 0 to stop.");
+    while (num)
+    {
+        new_node = getnode();
+        if (start == NULL)
+        {
+            new_node->next = new_node;
+            start = new_node;
+        }
+        else
+        {
+            temp = start;
+            while (temp->next != start)
+                temp = temp->next;
+            temp->next = new_node;
+            new_node->next = start;
+        }
+        printf("More nodes? (0/1) : ");
+        scanf("%d", &num);
+    }
     return start;
 }
 
-// Display the list
 cll *display(cll *start)
 {
-
+    cll *temp = start;
+    while (temp->next != start)
+    {
+        printf(" %d =>", temp->data);
+        temp = temp->next;
+    }
+    printf(" %d => NULL", temp->data);
     return start;
 }
 
-// Insertion at the beginning
 cll *insert_beg(cll *start)
 {
-
+    cll *temp = start;
+    cll *new_node = getnode();
+    while (temp->next != start)
+        temp = temp->next;
+    temp->next = new_node;
+    new_node->next = start;
+    start = new_node;
     return start;
 }
 
-// Insertion at the end
 cll *insert_end(cll *start)
 {
-
+    cll *temp = start;
+    cll *new_node = getnode();
+    while (temp->next != start)
+        temp = temp->next;
+    temp->next = new_node;
+    new_node->next = start;
     return start;
 }
 
-// Deletion from the beginning
 cll *delete_beg(cll *start)
 {
-
+    cll *temp = start;
+    while (temp->next != start)
+        temp = temp->next;
+    temp->next = start->next;
+    free(start);
+    start = temp->next;
     return start;
 }
 
-// Deletion from the end
-cll *delete__end(cll *start)
+cll *delete_end(cll *start)
 {
-
+    cll *temp, *prev;
+    temp = prev = start;
+    while (temp->next != start)
+    {
+        prev = temp;
+        temp = temp->next;
+    }
+    prev->next = temp->next;
+    free(temp);
     return start;
 }
 
-// Deletion after a given node
 cll *delete_after(cll *start)
 {
-
+    int val;
+    cll *temp, *prev;
+    temp = prev = start;
+    printf("\nEnter the value after which the node is to be deleted... ");
+    scanf("%d", &val);
+    while (prev->data != val)
+    {
+        prev = temp;
+        temp = temp->next;
+    }
+    prev->next = temp->next;
+    if (temp == start)
+        start = prev->next;
+    free(temp);
     return start;
 }
 
-// Deleting the entire linked list!!!
 cll *delete_list(cll *start)
 {
-
+    cll *temp = start;
+    while (temp->next != start)
+        start = delete_end(start);
+    free(start);
     return start;
 }
 
-// Driver program
 int main(int argc, char const *argv[])
 {
     int option;
@@ -93,7 +147,7 @@ int main(int argc, char const *argv[])
         printf("\n 5. Delete a node from the beginning");
         printf("\n 6. Delete a node from the end");
         printf("\n 7. Delete a node after a given node");
-        printf("\n 8.Delete the entire list\n");
+        printf("\n 8. Delete the entire list");
         printf("\n 9. EXIT");
         printf("\n-------------------------------------------");
         printf("\nEnter your option : ");

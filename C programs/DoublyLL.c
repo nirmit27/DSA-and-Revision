@@ -1,4 +1,3 @@
-// Program to create a doubly linked list and perform insertions and deletions in all cases
 #include <stdio.h>
 // #include<conio.h>
 #include <stdlib.h>
@@ -10,9 +9,8 @@ typedef struct node
     struct node *prev;
 } dll;
 
-dll *start = NULL; // initialising the start pointer under global scope
+dll *start = NULL; 
 
-// Creating a node
 dll *getnode()
 {
     dll *node = (dll *)malloc(sizeof(dll));
@@ -23,26 +21,25 @@ dll *getnode()
     return node;
 }
 
-// Creating a linked list
 dll *create_l1(dll *start)
 {
     int num;
-    dll *temp, *new;
+    dll *temp, *new_node;
     while (num != -1)
     {
         if (start == NULL)
         {
-            new = getnode();
-            start = new;
+            new_node = getnode();
+            start = new_node;
         }
         else
-        { // insertion at the end goin' on over here
+        { 
             temp = start;
             while (temp->next != NULL)
                 temp = temp->next;
-            new = getnode();
-            temp->next = new;
-            new->prev = temp;
+            new_node = getnode();
+            temp->next = new_node;
+            new_node->prev = temp;
         }
         printf("Enter -1 to stop and any other character to continue...\t");
         scanf("%d", &num);
@@ -50,7 +47,6 @@ dll *create_l1(dll *start)
     return start;
 }
 
-// Displaying the linked list
 dll *display(dll *start)
 {
     int ch;
@@ -69,7 +65,7 @@ dll *display(dll *start)
     }
     else if (ch == 2)
     {
-        while (temp->next != NULL) // traversing upto the last node
+        while (temp->next != NULL) 
             temp = temp->next;
         while (temp != NULL)
         {
@@ -81,63 +77,58 @@ dll *display(dll *start)
     return start;
 }
 
-// Insertion at the beginning
 dll *insert_beg(dll *start)
 {
-    dll *new = getnode();
-    start->prev = new;
-    new->next = start;
-    start = new;
+    dll *new_node = getnode();
+    start->prev = new_node;
+    new_node->next = start;
+    start = new_node;
     return start;
 }
 
-// Insertion at the end
 dll *insert_end(dll *start)
 {
     dll *temp = start;
-    dll *new = getnode();
+    dll *new_node = getnode();
     while (temp->next != NULL)
         temp = temp->next;
-    temp->next = new;
-    new->prev = temp;
+    temp->next = new_node;
+    new_node->prev = temp;
     return start;
 }
 
-// Insertion before a given node
 dll *insert_before(dll *start)
 {
     int x, val;
     dll *temp = start;
-    dll *new = getnode();
+    dll *new_node = getnode();
     printf("\nEnter the value before which the data is to inserted...\n");
     scanf("%d", &val);
     while (temp->data != val)
         temp = temp->next;
-    temp->prev->next = new;
-    new->prev = temp->prev;
-    new->next = temp;
-    temp->prev = new;
+    temp->prev->next = new_node;
+    new_node->prev = temp->prev;
+    new_node->next = temp;
+    temp->prev = new_node;
     return start;
 }
 
-// Insertion after a given node
 dll *insert_after(dll *start)
 {
     int val;
     dll *temp = start;
-    dll *new = getnode();
+    dll *new_node = getnode();
     printf("\nEnter the value after which the data is to be inserted...\t");
     scanf("%d", &val);
     while (temp->data != val)
         temp = temp->next;
-    temp->next->prev = new;
-    new->next = temp->next;
-    new->prev = temp;
-    temp->next = new;
+    temp->next->prev = new_node;
+    new_node->next = temp->next;
+    new_node->prev = temp;
+    temp->next = new_node;
     return start;
 }
 
-// Deletion from the beginning
 dll *delete_beg(dll *start)
 {
     dll *temp = start;
@@ -147,7 +138,6 @@ dll *delete_beg(dll *start)
     return start;
 }
 
-// Deletion from the end
 dll *delete_end(dll *start)
 {
     dll *temp = start;
@@ -158,7 +148,6 @@ dll *delete_end(dll *start)
     return start;
 }
 
-// Deleting a node before a given node
 dll *delete_before(dll *start)
 {
     dll *temp = start, *ptr;
@@ -179,7 +168,6 @@ dll *delete_before(dll *start)
     return start;
 }
 
-// Deleting a node after a given node
 dll *delete_after(dll *start)
 {
     dll *temp = start, *ptr;
@@ -195,11 +183,11 @@ dll *delete_after(dll *start)
     return start;
 }
 
-// Deleting the entire list!!!
 dll *delete_list(dll *start)
 {
     dll *temp = start;
-    while(start){
+    while (start)
+    {
         start = start->next;
         free(temp);
         temp = start;
@@ -207,7 +195,6 @@ dll *delete_list(dll *start)
     return temp;
 }
 
-// Driver program
 int main(int argc, char const *argv[])
 {
     int option;
