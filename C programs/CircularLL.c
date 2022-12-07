@@ -16,6 +16,7 @@ cll *getnode()
     printf("\nEnter the data to be inserted : ");
     scanf("%d", &(node->data));
     node->next = NULL;
+    return node;
 }
 
 cll *create_cll(cll *start)
