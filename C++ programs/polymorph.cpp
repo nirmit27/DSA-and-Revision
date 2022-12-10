@@ -59,8 +59,6 @@ public:
 
 int main()
 {
-
-    // Write your code here
     int l1, l2, b2;
     string t1, t2;
     cin >> l1 >> t1;
