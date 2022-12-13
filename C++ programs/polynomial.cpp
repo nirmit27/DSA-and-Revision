@@ -18,6 +18,7 @@ public:
 
     Polynomial(Polynomial const &obj) // Copy Constructor
     {
+        delete[] degCoeff;
         degCoeff = new int[obj.capacity];
         for (int i = 0; i < obj.capacity; i++)
             degCoeff[i] = obj.degCoeff[i];
@@ -150,6 +151,8 @@ int main(int argc, char const *argv[])
     int n1, n2, ch = 10;
 
     // First Polynomial input
+    cout << "\n\t\t\t THE POLYNOMIAL PROGRAM";
+    cout << "\n-----------------------------------------------------------------------------";
     cout << "\nEnter the number of terms in the first polynomial : ";
     cin >> n1;
     cout << "\nEnter the coefficients and degrees of the first polynomial down below : " << endl;
@@ -195,6 +198,8 @@ int main(int argc, char const *argv[])
         cout << "--------------------" << endl;
         cout << "Enter your choice of operation : ";
         cin >> ch;
+        if (ch == 5)
+            break;
         cout << endl;
         cout << "Result : " << endl;
         Polynomial result;
@@ -238,5 +243,6 @@ int main(int argc, char const *argv[])
         cout << "\nEnter 5 to exit.\nEnter any number to continue." << endl;
         cin >> ch;
     }
+    cout << "\n_____________________________________________________________________________";
     return 0;
 }
