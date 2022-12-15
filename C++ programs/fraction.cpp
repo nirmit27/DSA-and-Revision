@@ -77,8 +77,10 @@ int main()
 
     while (ch != 0)
     {
+        cout << "\n----------------------";
         cout << "\nChoose an operation :\n1.Addition\n2.Subtraction\n3.Multiplication\n4.Exit\n\nEnter your choice : ";
         cin >> ch;
+        cout << "----------------------";
         switch (ch)
         {
         case 1:
