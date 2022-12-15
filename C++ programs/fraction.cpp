@@ -64,7 +64,7 @@ public:
 // Driver Program
 int main()
 {
-    int N1, D1, N2, D2, ch=1;
+    int N1, D1, N2, D2, ch = 1;
 
     cout << "\nEnter the numerator and denominator of first fraction : ";
     cin >> N1 >> D1;
