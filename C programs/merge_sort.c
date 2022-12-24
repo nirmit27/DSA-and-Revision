@@ -7,23 +7,27 @@ MERGE SORT
 
 int n;
 
-void merge(int *arr, int beg, int mid, int end) {
+void merge(int *arr, int beg, int mid, int end)
+{
   int *temp = (int *)malloc(n * sizeof(int));
   int i = beg, j = mid + 1, idx = beg;
 
-  while (i <= mid && j <= end) {
+  while (i <= mid && j <= end)
+  {
     if (*(arr + i) < *(arr + j))
       *(temp + (idx++)) = *(arr + (i++));
     else
       *(temp + (idx++)) = *(arr + (j++));
   }
 
-  if (i > mid) {
+  if (i > mid)
+  {
     while (j <= end)
       *(temp + (idx++)) = *(arr + (j++));
   }
 
-  else {
+  else
+  {
     while (i <= mid)
       *(temp + (idx++)) = *(arr + (i++));
   }
@@ -32,9 +36,11 @@ void merge(int *arr, int beg, int mid, int end) {
     *(arr + x) = *(temp + x);
 }
 
-void merge_sort(int *arr, int beg, int end) {
+void merge_sort(int *arr, int beg, int end)
+{
   int mid;
-  if (beg < end) {
+  if (beg < end)
+  {
     mid = (beg + end) / 2;
     merge_sort(arr, beg, mid);
     merge_sort(arr, mid + 1, end);
@@ -42,14 +48,16 @@ void merge_sort(int *arr, int beg, int end) {
   }
 }
 
-void print(int *arr, int n) {
+void print(int *arr, int n)
+{
   printf("\n Sorted Array : ");
   for (int i = 0; i < n; i++)
     printf(" %d", *(arr + i));
-  printf("\n");
+  printf("\n\n");
 }
 
-int main() {
+int main()
+{
   printf("\n Enter the number of elements in the array : ");
   scanf("%d", &n);
 
