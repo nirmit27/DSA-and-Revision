@@ -24,12 +24,14 @@ int partition(int arr[], int beg, int end)
             loc = right;
         }
 
-        if(flag!=1){
-            while((arr[loc]>=arr[left]) && (loc!=left))
+        if (flag != 1)
+        {
+            while ((arr[loc] >= arr[left]) && (loc != left))
                 left++;
-            if(loc==left)
+            if (loc == left)
                 flag++;
-            else if(arr[loc]<arr[left]){
+            else if (arr[loc] < arr[left])
+            {
                 temp = arr[loc];
                 arr[loc] = arr[left];
                 arr[left] = temp;
