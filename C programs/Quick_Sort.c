@@ -49,7 +49,7 @@ void quick_sort(int arr[], int beg, int end)
     if (beg < end)
     {
         loc = partition(arr, beg, end);
-        quick_sort(arr, beg, loc-1);
+        quick_sort(arr, beg, loc - 1);
         quick_sort(arr, loc + 1, end);
     }
 }
