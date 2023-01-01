@@ -44,15 +44,15 @@ int main()
         }
         while (!temp.empty())
         {
-            ans.push_back(temp.top());
+            ans.push_back(temp.top()); // start popping all the index numbers of the asteroids that remain!
             temp.pop();
         }
         sort(ans.begin(), ans.end());
-        cout << ans.size() << endl;
+        cout << ans.size() << endl; // print the number of remaining asteroids 
         if (ans.size() > 0)
         {
             for (auto x : ans)
-                cout << x + 1 << " ";
+                cout << x + 1 << " "; // print the indices of remaining asteroids
         }
     }
     return 0;
