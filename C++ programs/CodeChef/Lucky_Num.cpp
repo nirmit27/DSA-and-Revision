@@ -1,4 +1,3 @@
-// Program to determine the Lucky numbers from the given test cases (from CodeChef!)
 #include <bits/stdc++.h>
 using namespace std;
 
