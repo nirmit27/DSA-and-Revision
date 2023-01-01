@@ -6,15 +6,15 @@ void luc_num(int a)
     int c = 0;
     if (a % 2 != 0)
         cout << '\t' << 1 << endl;
-        else
-        {
-            while (a % 2 == 0)
-            { // 48 // 24 // 12 // 6 // 3, stop! // c : 1,2,3,4
-                a /= 2;
-                c++;
-            }
-            cout << '\t' << (c % 2 == 0) << endl;
+    else
+    {
+        while (a % 2 == 0)
+        { // 48 // 24 // 12 // 6 // 3, stop! // c : 1,2,3,4
+            a /= 2;
+            c++;
         }
+        cout << '\t' << (c % 2 == 0) << endl;
+    }
 }
 
 int main()
