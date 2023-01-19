@@ -3,14 +3,15 @@
 
 typedef struct node
 {
-  int data;
+  int data, index;
   struct node *l, *r;
 } tree;
 
-tree *getnode(int d)
+tree *getnode(int d, int i)
 { // Creation of nodes
   tree *node = (tree *)malloc(sizeof(tree));
   node->l = node->r = NULL;
+  node->index = i;
   node->data = d;
   return node;
 }
@@ -45,16 +46,16 @@ void postorder(tree *root)
   }
 }
 
-tree *insert(tree *node, int d)
+tree *insert(tree *node, int d, int i)
 { // Insertion of nodes
   if (node == NULL)
-    return getnode(d);
+    return getnode(d, i);
   else
   {
     if (d < node->data)
-      node->l = insert(node->l, d);
+      node->l = insert(node->l, d, i);
     else if (d > node->data)
-      node->r = insert(node->r, d);
+      node->r = insert(node->r, d, i);
   }
   return node;
 }
@@ -79,15 +80,17 @@ int main()
   int d, n, i, k;
   tree *root = NULL; // Root node
 
+  printf("\n Binary Search Tree Operations - \n");
   printf("\n Enter the number of nodes : ");
   scanf("%d", &n);
 
   // Insertion
+  printf("\n");
   for (i = 0; i < n; i++)
   {
-    printf(" Enter the data for node %d\t: ", (i + 1));
+    printf(" Enter the data for node %d : ", (i + 1));
     scanf("%d", &d);
-    root = insert(root, d);
+    root = insert(root, d, (i + 1));
   }
 
   // Traversal
@@ -99,11 +102,12 @@ int main()
   postorder(root);
 
   // Searching
-  printf("\n Enter the value to be searched : ");
+  printf("\n Enter the key to be searched : ");
   scanf("%d", &k);
-  search(root, k) == NULL
-      ? printf("\n Key not found!\n")
-      : printf("\n Key found : %d\n", search(root, k)->data);
+  root = search(root, k);
+  root == NULL
+      ? printf("\n Key not found!\n\n")
+      : printf("\n Key found at node %d : %d\n\n", root->index, root->data);
 
   return 0;
 }
