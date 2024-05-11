@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.net.*;
 
@@ -21,9 +20,8 @@ public class Server {
 
             String line;
             while ((line = input.readLine()) != null) {
-                if (line.equals("Over")) {
+                if (line.equals("Over"))
                     break;
-                }
                 System.out.println(line);
             }
 
