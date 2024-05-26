@@ -1,3 +1,4 @@
 */*.class
 */*.cfg
 */*.exe
+*/settings.json
