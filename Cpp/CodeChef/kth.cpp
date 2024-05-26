@@ -7,22 +7,26 @@
 
 using namespace std;
 
-void kthSmallestLargest(int arr[], int n, int k) {
+void kthSmallestLargest(int arr[], int n, int k)
+{
     sort(arr, arr + n);
-    
-    //kthlargest
+
+    // kthlargest
     int z = n - 1;
     int mn = INT_MAX;
     int count = 0;
     int flag = 0;
 
-    while (z >= 0) {
+    while (z >= 0)
+    {
 
-        if (arr[z] < mn) {
+        if (arr[z] < mn)
+        {
             mn = arr[z];
             count++;
         }
-        if (count == k) {
+        if (count == k)
+        {
             flag = 1;
             cout << arr[z] << " ";
             break;
@@ -38,13 +42,16 @@ void kthSmallestLargest(int arr[], int n, int k) {
     mn = INT_MIN;
     flag = 0;
 
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++)
+    {
 
-        if (arr[i] > mn) {
+        if (arr[i] > mn)
+        {
             mn = arr[i];
             count++;
         }
-        if (count == k) {
+        if (count == k)
+        {
             flag = 1;
             cout << arr[i] << endl;
             break;
@@ -54,20 +61,24 @@ void kthSmallestLargest(int arr[], int n, int k) {
         cout << -1 << endl;
 }
 
-int main() {
+int main()
+{
     int t;
     cin >> t;
 
-    while (t > 0) {
+    while (t > 0)
+    {
         int n, k;
         cin >> n >> k;
         int arr[n];
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++)
+        {
             cin >> arr[i];
         }
         kthSmallestLargest(arr, n, k);
         cout << endl;
         t--;
     }
+    
     return 0;
 }

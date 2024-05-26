@@ -61,14 +61,18 @@ int main()
 {
     int l1, l2, b2;
     string t1, t2;
+
     cin >> l1 >> t1;
     cout << endl;
     cin >> l2 >> b2 >> t2;
+
     Square obj1(l1, t1);
     obj1.printMyType();
     cout << obj1.calculateArea() << endl;
+
     Rectangle obj2(l2, b2, t2);
     obj2.printMyType();
     cout << obj2.calculateArea() << endl;
+
     return 0;
 }

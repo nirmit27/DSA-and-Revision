@@ -26,5 +26,6 @@ int main()
     cout << "Count of pairs: " << count;
 
     delete[] arr;
+
     return 0;
 }

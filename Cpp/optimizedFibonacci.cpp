@@ -51,7 +51,6 @@ int fiboTopDown(int n, vector<int> &dp)
     return dp[n];
 }
 
-// --------------------- Driver Code --------------------- //
 int main()
 {
     int n, ch;
@@ -87,6 +86,8 @@ int main()
         cout << endl
              << "Wrong choice!" << endl;
     }
+
+    return 0;
 }
 
 // Fibonacci sequence ...

@@ -27,5 +27,6 @@ int main()
     cout << "Enter the range: ";
     cin >> S >> E;
     cout << totalPrime(S, E);
+    
     return 0;
 }

@@ -28,5 +28,6 @@ int main()
         cin >> x;
         luc_num(x);
     }
+    
     return 0;
 }

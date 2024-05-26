@@ -29,7 +29,9 @@ int main(int argc, char const *argv[])
     int num;
     cout << "Enter the number to be checked: ";
     cin >> num;
+
     prime(num);
     getchar();
+
     return 0;
 }

@@ -28,14 +28,20 @@ int result(vector<int> s, int d, int m)
 int main()
 {
     int n, d, m, count;
+
     cout << "\n Enter the length of the bar : ";
     cin >> n;
+
     vector<int> sample(n);
+
     cout << "\n Enter the bar's block numbers : ";
     for (auto i = 0; i < n; i++)
         cin >> sample[i];
+
     cout << "\n Enter the day and month of the birthday : ";
     cin >> d >> m;
+
     cout << "\n No. of possible segments : " << result(sample, d, m) << endl;
+
     return 0;
 }

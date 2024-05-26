@@ -45,5 +45,6 @@ int main()
     patt2(rows);
     cin.get();
     cin.get();
+
     return 0;
 }

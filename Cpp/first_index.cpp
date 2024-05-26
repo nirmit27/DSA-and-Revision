@@ -41,5 +41,6 @@ int main()
          << "Last occurence: " << pos2 << endl;
 
     delete[] arr;
+    
     return 0;
 }

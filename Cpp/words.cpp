@@ -1,13 +1,15 @@
 // Program to count the number of words in a string
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
+int countWords(string input)
+{
+    int spc = 1;
 
-int countWords(string input) {
-    int spc=1;
-
-    for(int i=0; i<input.length(); i++){
-        if(input[i]==' '){
+    for (int i = 0; i < input.length(); i++)
+    {
+        if (input[i] == ' ')
+        {
             spc++;
         }
     }
@@ -15,12 +17,13 @@ int countWords(string input) {
     return spc;
 }
 
-int main() {
+int main()
+{
     string input;
-    cout<<"Enter the sentence string: ";
+    cout << "Enter the sentence string: ";
     getline(cin, input);
 
-    cout <<"Number of words = "<<countWords(input)<< endl;
+    cout << "Number of words = " << countWords(input) << endl;
 
     return 0;
 }

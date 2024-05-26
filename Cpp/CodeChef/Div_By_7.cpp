@@ -1,4 +1,3 @@
-// Program to check whether... well, I'll explain later.
 #include <bits/stdc++.h>
 using namespace std;
 #define ll long long
@@ -26,5 +25,6 @@ int main()
         }
         (temp % 7 == 0) ? cout << "YES" << endl : cout << "NO" << endl;
     }
+
     return 0;
 }

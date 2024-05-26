@@ -61,7 +61,6 @@ public:
     }
 };
 
-// Driver Program
 int main()
 {
     int N1, D1, N2, D2, ch = 1;

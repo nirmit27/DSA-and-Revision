@@ -1,12 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void bfsTraversal(vector<vector<int>> adjList) {
+void bfsTraversal(vector<vector<int>> adjList)
+{
   int src;
   queue<int> q;
   vector<int> visited(adjList.size(), false);
 
-  cout << endl << "Enter the starting vertex : ";
+  cout << endl
+       << "Enter the starting vertex : ";
   cin >> src;
 
   q.push(src);
@@ -16,14 +18,17 @@ void bfsTraversal(vector<vector<int>> adjList) {
        << "Breadth First Traversal from vertex " << src << " :" << endl
        << endl;
 
-  while (!q.empty()) {
+  while (!q.empty())
+  {
     int curr = q.front();
     q.pop();
 
     cout << curr << " ";
 
-    for (int nbr : adjList[curr]) {
-      if (!visited[nbr]) {
+    for (int nbr : adjList[curr])
+    {
+      if (!visited[nbr])
+      {
         visited[nbr] = true;
         q.push(nbr);
       }
@@ -31,15 +36,18 @@ void bfsTraversal(vector<vector<int>> adjList) {
   }
 }
 
-void addEdges(vector<vector<int>> &adjList) {
+void addEdges(vector<vector<int>> &adjList)
+{
   cout << endl
        << "Enter the graph data : (Enter -1 to stop adding neighbour nodes)"
        << endl;
   int u = 0;
 
-  while (u < adjList.size()) {
+  while (u < adjList.size())
+  {
     int v;
-    cout << endl << "Enter the destination vertices for vertex " << u << " : ";
+    cout << endl
+         << "Enter the destination vertices for vertex " << u << " : ";
     cin >> v;
 
     if (v != -1)
@@ -49,7 +57,8 @@ void addEdges(vector<vector<int>> &adjList) {
   }
 }
 
-int main() {
+int main()
+{
   int n;
 
   cout << "Enter the number of nodes : ";

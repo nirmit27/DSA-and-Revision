@@ -73,7 +73,6 @@ bool Stack::isEmpty()
     return (top < 0);
 }
 
-// driver
 int main()
 {
     class Stack s1;
@@ -91,5 +90,6 @@ int main()
              << s1.peek();
         s1.pop(); // decrements the stack ptr. i.e. top
     }
+
     return 0;
 }

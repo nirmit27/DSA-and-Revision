@@ -1,4 +1,3 @@
-// Toughest Problem so far ... now we have to use STL.
 #include <bits/stdc++.h>
 #define ll long long
 using namespace std;
@@ -48,12 +47,13 @@ int main()
             temp.pop();
         }
         sort(ans.begin(), ans.end());
-        cout << ans.size() << endl; // print the number of remaining asteroids 
+        cout << ans.size() << endl; // print the number of remaining asteroids
         if (ans.size() > 0)
         {
             for (auto x : ans)
                 cout << x + 1 << " "; // print the indices of remaining asteroids
         }
     }
+    
     return 0;
 }

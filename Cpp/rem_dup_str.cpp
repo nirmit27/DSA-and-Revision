@@ -21,7 +21,9 @@ int main(int argc, char const *argv[])
 {
     string sample;
     cout << "Enter the string having consecutive duplicates: ";
+
     getline(cin, sample);
     cout << removeDuplicates(sample) << endl;
+
     return 0;
 }

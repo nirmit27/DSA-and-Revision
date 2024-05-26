@@ -1,5 +1,5 @@
 // Program to reverse a string word-wise
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 string reverseStringWordWise(string input)
@@ -7,7 +7,7 @@ string reverseStringWordWise(string input)
     vector<string> words;
     int n = input.size();
     string word;
-    
+
     for (int i = 0; i < n; i++)
     {
         if (input[i] == ' ')
@@ -39,11 +39,10 @@ string reverseStringWordWise(string input)
     return ans;
 }
 
-
 int main()
 {
     string str;
-    cout<<"Enter a sentence: ";
+    cout << "Enter a sentence: ";
     getline(cin, str);
 
     string ans = reverseStringWordWise(str);

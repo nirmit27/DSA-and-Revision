@@ -4,7 +4,7 @@
 using namespace std;
 
 void fact()
-{ // function to calculate the factorial of a number
+{
     int n;
     long factorial = 1.0;
 
@@ -26,5 +26,6 @@ void fact()
 int main()
 {
     fact();
+
     return 0;
 }

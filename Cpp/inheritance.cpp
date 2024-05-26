@@ -1,4 +1,3 @@
-// Program to demonstrate how inheritance works in C++
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -37,8 +36,7 @@ public:
     }
 };
 
-// Driver program
-int main(int argc, char const *argv[])
+int main()
 {
     int noOfGear, maxSpeed;
     string color;

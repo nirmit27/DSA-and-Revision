@@ -43,8 +43,11 @@ string reverseWords(string input)
 int main(int argc, char const *argv[])
 {
     string input;
+
     cout << "Enter the string: ";
     getline(cin, input);
+
     cout << reverseWords(input) << endl;
+
     return 0;
 }
