@@ -1,74 +1,60 @@
-// Program to calculate the sum and product of two complex numbers using OOP approach
-#include <bits/stdc++.h>
+#include <iostream>
 
 using namespace std;
 
-class ComplexNumbers
-{
-    int real;
-    int img;
+template <class T> class Complex {
+
+private:
+  T re, im;
 
 public:
-    ComplexNumbers(int r, int i)
-    {
-        real = r;
-        img = i;
+  Complex(T r, T i) : re(r), im(i) {}
+
+  void display() {
+    if (im < 0) {
+      cout << re << " - " << -im << "i" << endl;
+    } else {
+      cout << re << " + " << im << "i" << endl;
     }
-    void plus(ComplexNumbers obj)
-    {
-        real += obj.real;
-        img += obj.img;
-    }
-    void multiply(ComplexNumbers obj)
-    {
-        int res1 = real * (obj.real) - img * (obj.img);
-        int res2 = real * (obj.img) + img * (obj.real);
-        real = res1;
-        img = res2;
-    }
-    void print()
-    {
-        if (img >= 0)
-        {
-            cout << real << " + i" << img;
-        }
-        else
-        {
-            cout << real << " - i" << abs(img);
-        }
-    }
+  }
+
+  Complex operator+(const Complex<T> &obj) const {
+    return Complex(re + obj.re, im + obj.im);
+  }
+
+  Complex operator-(const Complex<T> &obj) const {
+    return Complex(re - obj.re, im - obj.im);
+  }
+
+  Complex operator*(const Complex<T> &obj) const {
+    T real = re * obj.re - im * obj.im;
+    T imag = re * obj.im + im * obj.re;
+    return Complex(real, imag);
+  }
 };
 
-int main()
-{
-    int real1, imaginary1, real2, imaginary2;
+int main() {
+  int a, b;
+  cout << endl << "COMPLEX NUMBER OPS." << endl << endl;
+  cout << "Enter the components of 1st number : ";
+  cin >> a >> b;
+  Complex<int> num1(a, b);
 
-    cout << "Enter the first complex number: ";
-    cin >> real1 >> imaginary1;
-    cout << "Enter the second complex number: ";
-    cin >> real2 >> imaginary2;
+  cout << "Enter the components of 2nd number : ";
+  cin >> a >> b;
+  Complex<int> num2(a, b);
 
-    ComplexNumbers c1(real1, imaginary1);
-    ComplexNumbers c2(real2, imaginary2);
+  Complex<int> sum = num1 + num2;
+  cout << endl << "Sum : ";
+  sum.display();
 
-    int choice;
-    cout << "Enter your choice of operation: 1) Sum\t2) Product\n>> ";
-    cin >> choice;
+  Complex<int> diff = num1 - num2;
+  cout << endl << "Difference : ";
+  diff.display();
 
-    if (choice == 1)
-    {
-        c1.plus(c2);
-        cout << "Sum = ";
-        c1.print();
-    }
-    else if (choice == 2)
-    {
-        c1.multiply(c2);
-        cout << "Product = ";
-        c1.print();
-    }
-    else
-    {
-        return 0;
-    }
+  Complex<int> prod = num1 * num2;
+  cout << endl << "Product : ";
+  prod.display();
+
+  return 0;
 }
