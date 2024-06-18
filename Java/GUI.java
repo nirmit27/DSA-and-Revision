@@ -20,8 +20,8 @@ public class GUI extends Frame implements ActionListener {
         Panel topPanel = new Panel();
         topPanel.setLayout(new FlowLayout());
 
-        Label label = new Label("Enter your name");
-        this.field = new TextField(20);
+        Label label = new Label("Enter your name : ");
+        this.field = new TextField(10);
         this.message = new Label("", Label.CENTER);
 
         Button button = new Button("Submit");
