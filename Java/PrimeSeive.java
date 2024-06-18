@@ -16,7 +16,7 @@ public class PrimeSeive {
 
         for (int i = 2; (i * i) <= n; i++) {
             if (isPrime[i]) {
-                for (int k = (i * i); k <= n; k = k + i)
+                for (int k = (i * i); k <= n; k += i)
                     isPrime[k] = false;
             }
         }
