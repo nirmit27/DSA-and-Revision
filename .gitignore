@@ -1,4 +1,4 @@
-*/*.class
+*.class
 */*.cfg
 */*.exe
 */settings.json
