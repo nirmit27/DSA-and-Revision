@@ -6,7 +6,7 @@ Link : https://leetcode.com/problems/find-smallest-letter-greater-than-target/
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Ltcd744 {
+public class CeilCharacter {
     public static char ceilChar(ArrayList<Character> arr, char ch) {
         if (arr == null || arr.size() == 0) {
             return (char) 0;
@@ -22,7 +22,6 @@ public class Ltcd744 {
                 start = mid + 1;
             }
         }
-
         return arr.get(start % arr.size());
     }
 
