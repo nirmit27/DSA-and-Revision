@@ -6,7 +6,7 @@ public class PrimeSeive {
     public static void main(String[] args) {
         int n;
         try (Scanner sc = new Scanner(System.in)) {
-            System.out.print("Enter the limit : ");
+            System.out.print("\nEnter the limit : ");
             n = sc.nextInt();
         }
 
