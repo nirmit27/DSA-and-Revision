@@ -1,4 +1,3 @@
-
 /* Implementation of Sieve of Eratosthenes */
 import java.util.Arrays;
 import java.util.Scanner;
