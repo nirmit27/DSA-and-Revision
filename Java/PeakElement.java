@@ -1,5 +1,5 @@
 /* 
-LeetCode problem #151 solution
+LeetCode problem #162 solution
 Link : https://leetcode.com/problems/find-peak-element/
  */
 
