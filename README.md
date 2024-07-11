@@ -1,11 +1,12 @@
 <div align="center">
 <h1 style="color: lightblue">DSA and Revision</h1>
-<p>This is a repository for DSA problems in <b>C++</b>, with some programs in <b>C</b>, <b>Java</b> and <b>Python</b> for revision.</p>
+<p>This is a repository for DSA practice in <b>C++</b> and <b>Java</b>, with some programs in <b>C</b> and <b>Python</b> for revision.</p>
 </div>
 
-#### DSA problems
-> [Java programs](Java/DSA)
-> [C++ programs](Cpp)
+### DSA programs
+> [Java](Java/DSA) by [Kunal Kushwaha](https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ&si=B3I9beuC-YjP-Gjs)
 
-#### Python revision
+> [C++](Cpp) by [Love Babbar](https://youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA&si=fNdholB6MBLICkMD)
+
+### Python revision
 > [Python programs](Python)
