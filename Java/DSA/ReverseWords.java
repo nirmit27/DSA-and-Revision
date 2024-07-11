@@ -6,7 +6,7 @@ Link : https://leetcode.com/problems/reverse-words-in-a-string/
 import java.util.Scanner;
 
 public class ReverseWords {
-    public static String reverse(String str) {
+    static String reverse(String str) {
         String res = "";
         String[] words = str.trim().split("[\s]+");
 

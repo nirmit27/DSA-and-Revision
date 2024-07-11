@@ -1,8 +1,10 @@
+/* Order-agnostic Binary Search + Ceil element + Floor element */
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
 public class BinarySearch {
-    public static int ceil(ArrayList<Integer> arr, int n) {
+    static int ceil(ArrayList<Integer> arr, int n) {
         if (arr == null || arr.size() == 0) {
             return -1;
         }
@@ -26,7 +28,7 @@ public class BinarySearch {
         return arr.get(l);
     }
 
-    public static int floor(ArrayList<Integer> arr, int n) {
+    static int floor(ArrayList<Integer> arr, int n) {
         if (arr == null || arr.size() == 0) {
             return -1;
         }
@@ -51,7 +53,7 @@ public class BinarySearch {
         return arr.get(r);
     }
 
-    public static int search(ArrayList<Integer> arr, int n) {
+    static int search(ArrayList<Integer> arr, int n) {
         if (arr == null || arr.size() == 0) {
             return -1;
         }

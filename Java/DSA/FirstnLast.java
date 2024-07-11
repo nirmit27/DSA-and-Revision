@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class FirstnLast {
-    public static int solve(ArrayList<Integer> arr, int n, boolean findFirstIndex) {
+    static int solve(ArrayList<Integer> arr, int n, boolean findFirstIndex) {
         int start = 0, end = arr.size() - 1, ans = -1;
 
         while (start <= end) {
@@ -29,7 +29,7 @@ public class FirstnLast {
         return ans;
     }
 
-    public static int[] firstNLast(ArrayList<Integer> arr, int n) {
+    static int[] firstNLast(ArrayList<Integer> arr, int n) {
         if (arr.size() < 2) {
             if (arr.size() == 1 && arr.get(0) == n) {
                 return new int[] { 0, 0 };

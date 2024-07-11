@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class CeilCharacter {
-    public static char ceilChar(ArrayList<Character> arr, char ch) {
+    static char ceilChar(ArrayList<Character> arr, char ch) {
         if (arr == null || arr.size() == 0) {
             return (char) 0;
         }

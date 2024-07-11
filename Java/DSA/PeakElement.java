@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 
 public class PeakElement {
-    public static int peakElement(ArrayList<Integer> arr) {
+    static int peakElement(ArrayList<Integer> arr) {
         if (arr.size() <= 1) {
             return 0;
         }
