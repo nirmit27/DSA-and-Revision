@@ -6,8 +6,12 @@ Link : https://leetcode.com/problems/peak-index-in-a-mountain-array/
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class Mount {
+public class Mountain {
     static int findPeak(ArrayList<Integer> arr) {
+        if (arr == null || arr.size() == 0) {
+            return -1;
+        }
+
         int start = 0, end = arr.size() - 1;
 
         while (start < end) {
@@ -23,7 +27,7 @@ public class Mount {
     }
 
     public static void main(String[] args) {
-        int size;
+        int size, result;
         ArrayList<Integer> arr = new ArrayList<>();
 
         try (Scanner sc = new Scanner(System.in)) {
@@ -36,6 +40,11 @@ public class Mount {
                 arr.add(x);
             }
         }
-        System.out.print(String.format("\nPeak %d found at index : %d", arr.get(findPeak(arr)), findPeak(arr)));
+        result = findPeak(arr);
+        if (result != -1) {
+            System.out.print(String.format("\nPeak %d found at index : %d", arr.get(result), result));
+        } else {
+            System.out.print("\nPeak NOT found.");
+        }
     }
 }

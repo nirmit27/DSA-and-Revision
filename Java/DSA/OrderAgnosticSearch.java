@@ -3,7 +3,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class BinarySearch {
+public class OrderAgnosticSearch {
     static int ceil(ArrayList<Integer> arr, int n) {
         if (arr == null || arr.size() == 0) {
             return -1;
@@ -53,7 +53,7 @@ public class BinarySearch {
         return arr.get(r);
     }
 
-    static int search(ArrayList<Integer> arr, int n) {
+    static int orderAgnosticSearch(ArrayList<Integer> arr, int n) {
         if (arr == null || arr.size() == 0) {
             return -1;
         }
@@ -81,7 +81,6 @@ public class BinarySearch {
                 }
             }
         }
-
         return -1;
     }
 
@@ -102,13 +101,13 @@ public class BinarySearch {
             n = sc.nextInt();
 
             System.out
-                    .print("\nOptions :-\n1 - Binary search\n2 - Ceil value\n3 - Floor value\nEnter your choice : ");
+                    .print("\nOptions :-\n1 - Order-agnostic binary search\n2 - Ceil value\n3 - Floor value\nEnter your choice : ");
             ch = sc.nextInt();
         }
 
         switch (ch) {
             case 1:
-                result = search(arr, n);
+                result = orderAgnosticSearch(arr, n);
                 if (result != -1) {
                     System.out.println(String.format("\nIndex of %d = %d", n, result));
                 } else {
