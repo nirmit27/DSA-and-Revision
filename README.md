@@ -6,7 +6,5 @@
 ### DSA programs
 > [Java](Java/DSA) by [Kunal Kushwaha](https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ&si=B3I9beuC-YjP-Gjs)
 
-> [C++](Cpp) by [Love Babbar](https://youtube.com/playlist?list=PLDzeHZWIZsTryvtXdMr6rPh4IDexB5NIA&si=fNdholB6MBLICkMD)
-
 ### Python revision
 > [Python programs](Python)
