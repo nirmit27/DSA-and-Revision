@@ -109,7 +109,7 @@ public class OrderAgnosticSearch {
             case 1:
                 result = orderAgnosticSearch(arr, n);
                 if (result != -1) {
-                    System.out.println(String.format("\nIndex of %d = %d", n, result));
+                    System.out.println(String.format("\nElement %d found at index : %d", n, result));
                 } else {
                     System.out.println(String.format("\n%d does not exist in the array.", n));
                 }

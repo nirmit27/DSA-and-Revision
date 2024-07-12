@@ -55,7 +55,7 @@ public class InfSearch {
         if (result != -1) {
             System.out.print(String.format("\nElement %d found at index : %d", n, result));
         } else {
-            System.out.print(String.format("\nElement %d does NOT exist in the array.", n));
+            System.out.print(String.format("\n%d does NOT exist in the array.", n));
         }
     }
 }

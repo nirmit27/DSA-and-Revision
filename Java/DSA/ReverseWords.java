@@ -23,6 +23,6 @@ public class ReverseWords {
             input = sc.nextLine();
         }
         result = reverse(input);
-        System.out.println(String.format("\nReversed string : %s", result));
+        System.out.println(String.format("\nReversed words : %s", result));
     }
 }

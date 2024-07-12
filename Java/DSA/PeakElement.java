@@ -47,7 +47,6 @@ public class PeakElement {
                 arr.add(x);
             }
         }
-
         result = peakElement(arr);
         System.out.println(String.format("\nPeak element : %d", result));
     }

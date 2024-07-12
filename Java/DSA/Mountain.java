@@ -42,9 +42,9 @@ public class Mountain {
         }
         result = findPeak(arr);
         if (result != -1) {
-            System.out.print(String.format("\nPeak %d found at index : %d", arr.get(result), result));
+            System.out.print(String.format("\nPeak element %d found at index : %d", arr.get(result), result));
         } else {
-            System.out.print("\nPeak NOT found.");
+            System.out.print("\nPeak element NOT found.");
         }
     }
 }
