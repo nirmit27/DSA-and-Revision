@@ -27,11 +27,11 @@ public class SearchRotate {
         while (start < end) {
             int mid = start + (end - start) / 2;
 
-            // Case 1 : Pivot lies in between `start` and `end` and BEFORE `end`
+            // Case 1 : Pivot lies in between `start` and `end`, BEFORE `end` and at `mid`
             if (mid < end && arr.get(mid) > arr.get(mid + 1)) {
                 return mid;
             }
-            // Case 2 : Pivot lies in between `start` and `end` and AFTER `start`
+            // Case 2 : Pivot lies in between `start` and `end`, AFTER `start` and before `mid`
             if (mid > start && arr.get(mid) < arr.get(mid - 1)) {
                 return mid - 1;
             }
