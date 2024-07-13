@@ -1,4 +1,5 @@
 *.class
 */*.cfg
 */*.exe
-*/settings.json
+Cpp
+*/settings.cfg
