@@ -2,4 +2,6 @@
 */*.cfg
 */*.exe
 Cpp
+*/*/Test.*
+*/*/test.*
 */settings.cfg
