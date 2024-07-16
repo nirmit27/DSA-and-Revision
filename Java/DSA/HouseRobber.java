@@ -26,20 +26,20 @@ public class HouseRobber {
     }
 
     public static void main(String[] args) {
-        int size, result;
+        int n, result;
         ArrayList<Integer> arr = new ArrayList<>();
 
         try (Scanner sc = new Scanner(System.in)) {
-            System.out.print("\nEnter the array size : ");
-            size = sc.nextInt();
+            System.out.print("\nEnter the no. of houses : ");
+            n = sc.nextInt();
 
-            System.out.print("\nEnter the amounts stashed in the houses : ");
-            for (int i = 0; i < size; i++) {
+            System.out.print("\nEnter the money stashed in the houses : ");
+            for (int i = 0; i < n; i++) {
                 int x = sc.nextInt();
                 arr.add(x);
             }
         }
         result = amount(arr);
-        System.out.println(String.format("\nAmount robbed : %d", result));
+        System.out.println(String.format("\nAmount robbed from alternate houses : %d", result));
     }
 }
