@@ -7,6 +7,34 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SearchRotate {
+    static int searchRotateRecursive(ArrayList<Integer> arr, int start, int end, int target) {
+        if (arr.size() == 0)
+            return -1;
+        if (arr.size() == 1) {
+            return (arr.get(0) == target) ? 0 : -1;
+        }
+        if (start > end)
+            return -1; // Base case
+
+        int mid = start + (end - start) / 2;
+        if (arr.get(mid) == target)
+            return mid;
+
+        if (arr.get(start) <= arr.get(mid)) { // 1st sub-array
+            if (target >= arr.get(start) && target < arr.get(mid)) {
+                return searchRotateRecursive(arr, start, mid - 1, target);
+            } else {
+                return searchRotateRecursive(arr, mid + 1, end, target);
+            }
+        }
+
+        if (target > arr.get(mid) && target <= arr.get(end)) { // 2nd sub-array
+            return searchRotateRecursive(arr, mid + 1, end, target);
+        } else {
+            return searchRotateRecursive(arr, start, mid - 1, target);
+        }
+    }
+
     public static int binarySearch(ArrayList<Integer> arr, int start, int end, int target) {
         while (start <= end) {
             int mid = start + (end - start) / 2;
@@ -31,7 +59,8 @@ public class SearchRotate {
             if (mid < end && arr.get(mid) > arr.get(mid + 1)) {
                 return mid;
             }
-            // Case 2 : Pivot lies in between `start` and `end`, AFTER `start` and before `mid`
+            // Case 2 : Pivot lies in between `start` and `end`, AFTER `start` and before
+            // `mid`
             if (mid > start && arr.get(mid) < arr.get(mid - 1)) {
                 return mid - 1;
             }
@@ -83,7 +112,7 @@ public class SearchRotate {
             System.out.print("\nEnter the target element : ");
             n = sc.nextInt();
         }
-        result = searchRotate(arr, n);
+        result = searchRotateRecursive(arr, 0, arr.size() - 1, n);
         if (result != -1) {
             System.out.println(String.format("\nElement %d found at index : %d", n, result));
         } else {

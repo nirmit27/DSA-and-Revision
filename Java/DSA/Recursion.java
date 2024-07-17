@@ -1,30 +1,45 @@
-import java.util.Scanner;
+// Recursion... revisited.
+
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Recursion {
-    static int linearSearch(ArrayList<Integer> arr, int index, int target) {
-        if (arr.size() == 0)
-            return -1;
-        if (index == arr.size() - 1)
-            return -1;
-        if (arr.get(index) == target)
-            return index;
+    static void allIndices(ArrayList<Integer> indices, int target) {
+        System.out.print(String.format("\nIndices of occurence of %d : ", target));
+        for (int i : indices)
+            System.out.print(i + " ");
+        System.out.println();
+    }
 
-        return linearSearch(arr, index + 1, target);
+    static ArrayList<Integer> linearSearchAll(ArrayList<Integer> arr, int index, int target) {
+        if (arr.size() == 0)
+            return new ArrayList<>();
+
+        ArrayList<Integer> curr = new ArrayList<>();
+        if (index == arr.size())
+            return curr;
+
+        if (arr.get(index) == target)
+            curr.add(index);
+
+        ArrayList<Integer> prev = linearSearchAll(arr, index + 1, target);
+        curr.addAll(prev);
+        return curr;
     }
 
     static boolean isSorted(ArrayList<Integer> arr, int index) {
         if (index == arr.size() - 1)
             return true;
-        return (arr.get(index) < arr.get(index + 1)) && isSorted(arr, index + 1);
+        return (arr.get(index) <= arr.get(index + 1)) && isSorted(arr, index + 1);
     }
 
     public static void main(String[] args) {
-        int n, target, result;
+        int n, target;
+        ArrayList<Integer> ans;
         ArrayList<Integer> arr = new ArrayList<>();
 
         try (Scanner sc = new Scanner(System.in)) {
-            System.out.print("Enter the size : ");
+            System.out.print("\nEnter the size : ");
             n = sc.nextInt();
             System.out.print("\nEnter the elements : ");
             for (int i = 0; i < n; i++) {
@@ -34,15 +49,14 @@ public class Recursion {
             System.out.print("\nEnter the target : ");
             target = sc.nextInt();
         }
+        // Checking if the array is sorted or not ...
         if (isSorted(arr, 0))
             System.out.println(String.format("\nThe given array is sorted!"));
         else
             System.out.println(String.format("\nThe given array is NOT sorted."));
 
-        result = linearSearch(arr, 0, target);
-        if (result != -1)
-            System.out.println(String.format("\n%d found at index : %d", target, result));
-        else
-            System.out.println(String.format("\n%d not found!", target));
+        // Linear search for all indices of an element in an array ...
+        ans = linearSearchAll(arr, 0, target);
+        allIndices(ans, target);
     }
 }
