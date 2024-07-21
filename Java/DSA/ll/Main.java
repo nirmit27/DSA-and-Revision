@@ -13,13 +13,17 @@ public class Main {
                 ll.insertLast(x);
             }
         }
+        /*
+         * ll.traversal();
+         * ll.insert(2, 3);
+         * ll.insert(5, 7);
+         * ll.traversal();
+         * ll.deleteLast();
+         * ll.traversal();
+         * ll.delete(3);
+         */
         ll.traversal();
-        ll.insert(2, 3);
-        ll.insert(5, 7);
-        ll.traversal();
-        ll.deleteLast();
-        ll.traversal();
-        ll.delete(3);
+        ll.reversal();
         ll.traversal();
     }
 }

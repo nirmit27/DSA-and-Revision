@@ -3,6 +3,9 @@ public class LList {
         private int val;
         private Node next;
 
+        Node() {
+        }
+
         Node(int value) {
             this.val = value;
         }
@@ -42,6 +45,20 @@ public class LList {
             temp = temp.next;
         }
         System.out.println("NULL");
+    }
+
+    public void reversal() {
+        if (size == 1)
+            return;
+
+        Node prev = null;
+        while (head != null) {
+            Node temp = head.next;
+            head.next = prev;
+            prev = head;
+            head = temp;
+        }
+        head = tail;
     }
 
     public void insertFirst(int val) {
