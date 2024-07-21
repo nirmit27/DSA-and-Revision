@@ -4,7 +4,8 @@
 </div>
 
 ### DSA programs
-> [Java](Java/DSA) by [Kunal Kushwaha](https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ&si=B3I9beuC-YjP-Gjs)
+> [Java](Java/DSA) by [Kunal Kushwaha](https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ&si=B3I9beuC-YjP-Gjs)<br>
+> [Linked list operations](Java/DSA/ll/LList.java)
 
 ### Python revision
 > [Python programs](Python)
