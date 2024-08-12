@@ -73,12 +73,13 @@ class Sorting {
     static void bubbleSort(ArrayList<Integer> arr) {
         if (arr.size() <= 1)
             return;
-        boolean swapped = true;
+        boolean swapped = false;
 
         for (int i = 0; i < arr.size(); i++) {
             for (int j = 1; j < arr.size() - i; j++) {
                 if (arr.get(j) < arr.get(j - 1))
                     swap(arr, j, j - 1); // Swap elements in PAIRS
+                    swapped = true;
             }
             if (!swapped) // For an ALREADY sorted array
                 break;
