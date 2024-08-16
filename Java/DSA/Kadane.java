@@ -1,3 +1,8 @@
+/*
+Implementation of Kadane's algorithm
+for computing the maximum sub-array sum
+*/
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
