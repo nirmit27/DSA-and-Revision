@@ -13,8 +13,7 @@ public class LCS {
 
         for(int i=0; i<m; i++){
             for(int j=0; j<n; j++){
-                dp[i + 1][j + 1] = (text1.charAt(i) == text2.charAt(j)) ?
-                                1 + dp[i][j] : Math.max(dp[i+1][j], dp[i][j+1]);
+                dp[i + 1][j + 1] = (text1.charAt(i) == text2.charAt(j)) ? 1 + dp[i][j] : Math.max(dp[i+1][j], dp[i][j+1]);
             }
         }
         return dp[m][n];
