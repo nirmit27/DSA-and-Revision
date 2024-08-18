@@ -1,5 +1,5 @@
 /* 
-LeetCode problem #169 solution
+LeetCode problem #169 solution - Moore's Voting algorithm
 Link : https://leetcode.com/problems/majority-element/
  */
 

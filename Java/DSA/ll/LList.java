@@ -3,6 +3,7 @@ public class LList {
         private int val;
         private Node next;
 
+        @SuppressWarnings("unused")
         Node() {
         }
 

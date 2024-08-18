@@ -11,6 +11,7 @@ public class CustomAL<T extends Number> {
         this.data = new Object[DEFAULT_SIZE];
     }
 
+    @SuppressWarnings("unchecked")
     public T get(int index) {
         if (index >= size || index < 0)
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + size);
@@ -52,6 +53,7 @@ public class CustomAL<T extends Number> {
         if (size == 0)
             throw new IllegalStateException("Cannot remove an element from an empty list.");
 
+        @SuppressWarnings("unchecked")
         T removed = (T) data[size--];
         return removed;
     }
