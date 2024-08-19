@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Count {
-    public static int count(int[] arr, int n, int x) {
+    public static int countOcc(int[] arr, int n, int x) {
         if (n == 0)
             return 0;
 
@@ -69,7 +69,7 @@ public class Count {
                 arr[i] = sc.nextInt();
         }
         Arrays.sort(arr); // sorting in ASC order for BIN Search
-        result = count(arr, arr.length, x);
+        result = countOcc(arr, arr.length, x);
         System.out.println(String.format("\nOccurrences of %d : %d", x, result));
     }
 }
