@@ -4,7 +4,7 @@
 </div>
 
 ### DSA programs
-> [Java](Java/DSA) by [Kunal Kushwaha](https://youtube.com/playlist?list=PL9gnSGHSqcnr_DxHsP7AW9ftq0AtAyYqJ&si=B3I9beuC-YjP-Gjs)<br>
+> [Java](Java/DSA)
 
 ### Python revision
 > [Python programs](Python)
