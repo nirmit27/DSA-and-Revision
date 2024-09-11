@@ -3,8 +3,8 @@
 <p>This is a repository for DSA practice in <b>Java</b>, with some programs in <b>C</b> and <b>Python</b> for revision.</p>
 </div>
 
-### DSA programs
-> [Java](Java/DSA)
+## DSA
+> [Java programs](Java/DSA)
 
-### Python revision
+## Python revision
 > [Python programs](Python)
