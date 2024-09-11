@@ -5,7 +5,7 @@ Link : https://leetcode.com/problems/minimum-bit-flips-to-convert-number/
 
 import java.util.Scanner;
 
-class Ltcd2220 {
+class BitFlips {
     public static void main(String[] args) {
         int a, b, res;
         try(Scanner sc = new Scanner(System.in)){
