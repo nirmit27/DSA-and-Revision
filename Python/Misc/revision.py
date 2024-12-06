@@ -8,8 +8,11 @@ from itertools import permutations, combinations_with_replacement
 
 def file_dialogs() -> None:
     """Returns the path of the selected file from the file dialog window."""
-    path: str = fd.askopenfilename(initialdir=os.getcwd(
-    ), title="File Dialog", filetypes=(("Text", "*.txt"), ("Config", "*.cfg")))
+    path: str = fd.askopenfilename(
+        initialdir=os.getcwd(),
+        title="File Dialog",
+        filetypes=(("Text", "*.txt"), ("Config", "*.cfg")),
+    )
     print(path)
 
 
@@ -34,13 +37,13 @@ def pnc(sample: str) -> None:
     print(f"All possible permutations for the sample {sample} are -")
     for perm in perms:
         for p in perm:
-            print(p, end=' ')
+            print(p, end=" ")
         print()
 
     print(f"\nAll possible combinations for the sample : {sample} are -")
     for combo in combos_no_reps:
         for c in combo:
-            print(c, end=' ')
+            print(c, end=" ")
         print()
 
 
@@ -61,17 +64,17 @@ def exec_intro(filepath: str = "test.txt") -> None:
     data: list = []
     script: str = ""
 
-    with open(filepath, 'r') as file:
+    with open(filepath, "r") as file:
         data = file.readlines()
 
-    if (len(data)):
+    if len(data):
         for line in data:
             script += line
 
     exec(script)
 
 
-def read_config(configpath: str = "settings.cfg", section: str = 'CONFIG') -> None:
+def read_config(configpath: str = "settings.cfg", section: str = "CONFIG") -> None:
     creds: dict[str, str] = {}
 
     config: cfgp = cfgp()
@@ -90,7 +93,7 @@ def get_filepath() -> str:
 
     for dirname, _, filenames in os.walk(os.getcwd()):
         for filename in filenames:
-            if filename.endswith('.txt'):
+            if filename.endswith(".txt"):
                 txt_path = os.path.join(dirname, filename)
 
     return txt_path
