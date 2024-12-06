@@ -12,6 +12,4 @@ Primarily written in **Java**, with occasional **Python** scripts, and **C** pro
 - **[Python Programs](Python/DSA)**
 
 ## Revision
-- **[Python Programs](Python/Misc/)**
-
 - **[C Programs](C/Misc/)**
