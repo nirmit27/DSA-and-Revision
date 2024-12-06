@@ -12,4 +12,4 @@ Primarily written in **Java**, with occasional **Python** scripts, and **C** pro
 - **[Python Programs](Python/DSA)**
 
 ## Revision
-- **[C Programs](C/Misc/)**
+- **[C Programs](C/)**
