@@ -61,6 +61,6 @@ public class TargetSum {
                 arr[i] = sc.nextInt();
         }
         res = findSolutions(arr, target);
-        System.out.println(String.format("\nNo. of possible solutions : %d", res));
+        System.out.println(String.format("\nNo. of possible expressions : %d", res));
     }
 }
