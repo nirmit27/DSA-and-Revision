@@ -1,4 +1,4 @@
-/* Making a CUSTOM generic data structure. */
+/* Making a CUSTOM Generic ArrayList ;) */
 
 package Custom;
 
