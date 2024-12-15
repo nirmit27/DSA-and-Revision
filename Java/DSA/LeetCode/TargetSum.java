@@ -1,3 +1,4 @@
+package LeetCode;
 /* 
 LeetCode problem #494 solution
 Link : https://leetcode.com/problems/target-sum/

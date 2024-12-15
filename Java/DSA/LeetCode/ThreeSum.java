@@ -1,3 +1,4 @@
+package LeetCode;
 /* 
 LeetCode problem #15 solution
 Link : https://leetcode.com/problems/3sum/

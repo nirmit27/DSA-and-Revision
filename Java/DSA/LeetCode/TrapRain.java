@@ -1,3 +1,4 @@
+package LeetCode;
 /* 
 LeetCode problem #42 solution
 Link : https://leetcode.com/problems/trapping-rain-water/
