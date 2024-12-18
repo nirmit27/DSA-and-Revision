@@ -7,9 +7,9 @@ Primarily written in **Java**, with occasional **Python** scripts, and **C** pro
 ---
 
 ## DSA
-- **[Java Programs](Java/DSA)**
+- **[GeeksForGeeks Problems](Java/DSA/GfG)**
 
-- **[Python Programs](Python/DSA)**
+- **[LeetCode Problems](Python/DSA/LeetCode)**
 
 ## Revision
 - **[C Programs](C/)**
