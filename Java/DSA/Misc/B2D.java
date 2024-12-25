@@ -1,3 +1,4 @@
+package Misc;
 /* Converting BIN to DEC */
 
 import java.util.Scanner;

@@ -1,3 +1,4 @@
+package College;
 /* 2 Examples of Multithreading in Java */
 
 import java.util.Scanner;

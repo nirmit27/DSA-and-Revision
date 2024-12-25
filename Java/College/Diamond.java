@@ -1,4 +1,5 @@
 /* Diamond problem of Multiple Inheritance solved using Interfaces */
+package College;
 
 interface Interface0 {
     default void show(String name, long urn) {

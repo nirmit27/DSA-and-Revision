@@ -1,3 +1,4 @@
+package College;
 /* 3 Examples of Method Overloading i.e.
 COMPILE-TIME or STATIC Polymorphism */
 

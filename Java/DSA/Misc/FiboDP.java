@@ -1,3 +1,4 @@
+package Misc;
 /* Dynamic Programming approach for generating Fibonacci sequence */
 
 import java.util.Scanner;

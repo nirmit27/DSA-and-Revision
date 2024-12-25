@@ -1,7 +1,10 @@
+// Accessing a Java Beans class ...
+package College;
+
 import java.util.Scanner;
 import Beans.Employee;
 
-public class BeanTest { // Accessing a Java Beans class ...
+public class BeanTest {
     public static void main(String[] args) {
         int id;
         String name;
@@ -13,8 +16,10 @@ public class BeanTest { // Accessing a Java Beans class ...
             name = sc.nextLine();
         }
         Employee employee = new Employee(); // Creating a Java Bean object
+
         employee.setId(id);
         System.out.println(String.format("\nEmployee ID : %d", employee.getId()));
+
         employee.setName(name);
         System.out.println(String.format("\nEmployee Name : %s", employee.getName()));
     }

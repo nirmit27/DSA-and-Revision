@@ -4,7 +4,6 @@ LeetCode problem #4 solution
 Link : https://leetcode.com/problems/median-of-two-sorted-arrays/
  */
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MedianOfTwo {

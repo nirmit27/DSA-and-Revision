@@ -1,5 +1,4 @@
 /* Making a CUSTOM Generic ArrayList ;) */
-
 package Custom;
 
 import java.util.Arrays;

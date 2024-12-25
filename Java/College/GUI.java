@@ -1,3 +1,6 @@
+/* A simple GUI program that takes a name as input and displays a greeting message. */
+package College;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Scanner;

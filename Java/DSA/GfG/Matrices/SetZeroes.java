@@ -4,8 +4,6 @@ GfG problem - "Set Matrix Zeroes" solution
 Link : https://www.geeksforgeeks.org/problems/set-matrix-zeroes/1
  */
 
-import java.util.Scanner;
-
 public class SetZeroes {
     public static void setZeroes(int[][] mat, int n, int m) {
         int fc = 1; // 1st entry of row counter
@@ -47,33 +45,15 @@ public class SetZeroes {
         }
     }
 
-    public static void displayMatrix(int[][] matrix, int n, int m) {
-        System.out.println("\nMatrix Status :");
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++)
-                System.out.print(matrix[i][j] + " ");
-            System.out.println();
-        }
-    }
-
     public static void main(String[] args) {
         int n, m;
-        int[][] matrix;
-        try (Scanner sc = new Scanner(System.in)) {
-            System.out.print("Enter the number of rows : ");
-            n = sc.nextInt();
+        int[][] matrix = GfG.Matrices.MatUtils.createMatrix();
+        
+        n = matrix.length;
+        m = matrix[0].length;
 
-            System.out.print("Enter the number of columns : ");
-            m = sc.nextInt();
-            matrix = new int[n][m];
-
-            System.out.println("\nEnter the matrix elements :");
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < m; j++)
-                    matrix[i][j] = sc.nextInt();
-            }
-        }
+        GfG.Matrices.MatUtils.displayMatrix(matrix, n, m, "BEFORE");
         setZeroes(matrix, n, m);
-        displayMatrix(matrix, n, m);
+        GfG.Matrices.MatUtils.displayMatrix(matrix, n, m, "BEFORE");
     }
 }

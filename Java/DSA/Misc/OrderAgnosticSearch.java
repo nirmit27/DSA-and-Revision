@@ -1,3 +1,4 @@
+package Misc;
 /* Order-agnostic Binary Search + Ceil element + Floor element */
 
 import java.util.Scanner;

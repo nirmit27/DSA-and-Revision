@@ -1,3 +1,4 @@
+/* Making a CUSTOM LinkedList ;) */
 package Custom.CustomLinkedList;
 
 public class LList {

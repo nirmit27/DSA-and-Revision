@@ -1,3 +1,4 @@
+package Misc;
 /* Revisiting the Sorting algorithms */
 
 import java.util.Scanner;
