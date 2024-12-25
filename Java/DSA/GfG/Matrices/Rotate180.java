@@ -11,7 +11,7 @@ public class Rotate180 {
         mat[n - i - 1][n - j - 1] = temp;
     }
 
-    public static void swap180(int[][] mat, int n) {
+    public static void rotate180(int[][] mat, int n) {
         // Swapping for EVEN dims.
         for (int i = 0; i < n / 2; i++) {
             for (int j = 0; j < n; j++) {
@@ -29,11 +29,11 @@ public class Rotate180 {
 
     public static void main(String[] args) {
         int n;
-        int[][] mat = GfG.Matrices.MatUtils.createMatrix();
+        int[][] mat = GfG.Matrices.MatUtils.create2DMatrix();
         n = mat.length;
 
         GfG.Matrices.MatUtils.displayMatrix(mat, n, n, "BEFORE");
-        swap180(mat, n);
+        rotate180(mat, n);
         GfG.Matrices.MatUtils.displayMatrix(mat, n, n, "AFTER");
     }
 }

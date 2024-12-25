@@ -47,8 +47,8 @@ public class SetZeroes {
 
     public static void main(String[] args) {
         int n, m;
-        int[][] matrix = GfG.Matrices.MatUtils.createMatrix();
-        
+        int[][] matrix = GfG.Matrices.MatUtils.create2DMatrix();
+
         n = matrix.length;
         m = matrix[0].length;
 

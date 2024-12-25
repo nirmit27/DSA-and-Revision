@@ -13,7 +13,7 @@ public class MatUtils {
         }
     }
 
-    public static int[][] createMatrix() {
+    public static int[][] create2DMatrix() {
         int n, m;
         int[][] matrix;
 
@@ -34,9 +34,35 @@ public class MatUtils {
         return matrix;
     }
 
+    public static int[] arrayInput(Scanner sc) {
+        int n;
+        int[] array;
+
+        System.out.print("Enter the array size : ");
+        n = sc.nextInt();
+
+        array = new int[n];
+        System.out.print("\nEnter the array elements : ");
+        for (int i = 0; i < n; i++)
+            array[i] = sc.nextInt();
+
+        return array;
+    }
+
+    public static int[] dimsInput(Scanner sc) {
+        int n, m;
+        System.out.print("Enter the number of rows : ");
+        n = sc.nextInt();
+
+        System.out.print("Enter the number of columns : ");
+        m = sc.nextInt();
+
+        return new int[] { n, m };
+    }
+
     public static void main(String[] args) {
         /*
-         * createMatrix();
+         * create2DMatrix();
          * displayMatrix(matrix, n, m, "MESSAGE");
          */
     }
