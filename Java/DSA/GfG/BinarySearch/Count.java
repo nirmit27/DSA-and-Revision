@@ -1,4 +1,4 @@
-package GfG;
+package GfG.BinarySearch;
 /* 
 GfG problem - "Number of Occurrence" solution
 Link : https://www.geeksforgeeks.org/problems/number-of-occurrence2259/0

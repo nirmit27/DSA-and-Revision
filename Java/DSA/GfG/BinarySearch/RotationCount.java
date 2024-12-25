@@ -1,4 +1,4 @@
-package GfG;
+package GfG.BinarySearch;
 /* 
  GfG problem - "Find Kth Rotation" solution
  Link : https://www.geeksforgeeks.org/find-rotation-count-rotated-sorted-array/

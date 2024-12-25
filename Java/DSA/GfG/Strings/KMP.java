@@ -1,4 +1,4 @@
-package GfG;
+package GfG.Strings;
 /* 
 GfG problem - "Search Pattern (KMP-Algorithm)" solution
 Link : https://www.geeksforgeeks.org/problems/search-pattern0205/0

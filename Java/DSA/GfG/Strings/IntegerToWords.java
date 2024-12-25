@@ -1,4 +1,4 @@
-package GfG;
+package GfG.Strings;
 /* 
 GfG problem - "Integer to Words" solution
 Link : https://www.geeksforgeeks.org/problems/number-to-words0335/0

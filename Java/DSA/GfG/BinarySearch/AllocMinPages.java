@@ -1,4 +1,4 @@
-// package GfG;
+package GfG.BinarySearch;
 /* 
 GfG problem - "Allocate Minimum Pages" solution
 Link : https://www.geeksforgeeks.org/problems/allocate-minimum-number-of-pages0937/1

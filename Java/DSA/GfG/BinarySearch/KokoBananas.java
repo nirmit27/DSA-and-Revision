@@ -1,4 +1,4 @@
-package GfG;
+package GfG.BinarySearch;
 /* 
 GfG problem - "Koko Eating Bananas" solution
 Link : https://www.geeksforgeeks.org/problems/koko-eating-bananas/1

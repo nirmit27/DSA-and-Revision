@@ -1,4 +1,4 @@
-package GfG;
+package GfG.Strings;
 /* 
 GfG problem - "Minimum sum" solution
 Link : https://www.geeksforgeeks.org/problems/minimum-sum4058/1

@@ -1,4 +1,4 @@
-package GfG;
+package GfG.BinarySearch;
 /* 
 GfG problem - "Find position of an element in a sorted array of infinite numbers"
 Link : https://www.geeksforgeeks.org/find-position-element-sorted-array-infinite-numbers/

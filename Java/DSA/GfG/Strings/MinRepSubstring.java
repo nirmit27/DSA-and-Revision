@@ -1,4 +1,4 @@
-package GfG;
+package GfG.Strings;
 /* 
 GfG problem - "Minimum repeat to make substring" solution
 Link : https://www.geeksforgeeks.org/problems/minimum-times-a-has-to-be-repeated-such-that-b-is-a-substring-of-it--170645/0
