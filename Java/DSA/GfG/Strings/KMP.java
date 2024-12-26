@@ -4,7 +4,6 @@ GfG problem - "Search Pattern (KMP-Algorithm)" solution
 Link : https://www.geeksforgeeks.org/problems/search-pattern0205/0
  */
 
-
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -19,40 +18,19 @@ public class KMP {
             System.out.println(i + " -> " + text.substring(i, i + end));
         System.out.println();
     }
-    
-    static void computeLps(int[] lps, String s) {
-        int i = 1, l = 0;
-        lps[0] = 0;
-        
-        while (i < s.length()) {
-            if (s.charAt(i) == s.charAt(l)) {
-                l++;
-                lps[i] = l;
-                i++;
-            } else {
-                if(l != 0)
-                    l = lps[i - 1];
-                else {
-                    lps[i] = 0;
-                    i++;
-                }
-            }
-        }
-    }
-    
+
     public static ArrayList<Integer> kmp(String pat, String txt) {
         int i = 0, j = 0;
         int m = txt.length(), n = pat.length();
-        
-        int[] lps = new int[n];
+
+        int[] lps = StringUtils.computeLps(pat);
         ArrayList<Integer> result = new ArrayList<>();
-        
-        computeLps(lps, pat);
+
         while (i < m) {
             if (txt.charAt(i) == pat.charAt(j)) {
                 i++;
                 j++;
-                
+
                 if (j == n) {
                     result.add(i - j);
                     j = lps[j - 1];
@@ -66,11 +44,11 @@ public class KMP {
         }
         return result;
     }
-    
+
     public static void main(String[] args) {
         String text, pattern;
         ArrayList<Integer> res;
-        
+
         try (Scanner sc = new Scanner(System.in)) {
             System.out.print("Enter the text : ");
             text = sc.nextLine();

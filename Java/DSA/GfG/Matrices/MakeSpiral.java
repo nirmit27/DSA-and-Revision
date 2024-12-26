@@ -40,13 +40,13 @@ public class MakeSpiral {
         int[] dims, arr;
 
         try (Scanner sc = new Scanner(System.in)) {
-            dims = GfG.Matrices.MatUtils.dimsInput(sc);
+            dims = MatUtils.dimsInput(sc);
             System.out.println();
-            arr = GfG.Matrices.MatUtils.arrayInput(sc);
+            arr = MatUtils.arrayInput(sc);
         }
 
         int[][] mat = makeSpiral(arr, dims[0], dims[1]);
-        GfG.Matrices.MatUtils.displayMatrix(mat, dims[0], dims[1],
+        MatUtils.displayMatrix(mat, dims[0], dims[1],
                 String.format("SPIRAL MATRIX of order (%d x %d)", dims[0], dims[1]));
     }
 }

@@ -23,11 +23,11 @@ public class BeautifulMatrix {
     }
 
     public static void main(String[] args) {
-        int[][] matrix = GfG.Matrices.MatUtils.create2DMatrix();
+        int[][] matrix = MatUtils.create2DMatrix();
         int n = matrix.length;
         int res;
 
-        GfG.Matrices.MatUtils.displayMatrix(matrix, n, n, "BEFORE");
+        MatUtils.displayMatrix(matrix, n, n, "BEFORE");
         res = beautifulMatrix(matrix);
         System.out.println(String.format("Minimum number of operations required : %d", res));
     }

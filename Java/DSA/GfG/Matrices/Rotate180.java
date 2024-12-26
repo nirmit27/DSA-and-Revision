@@ -29,11 +29,11 @@ public class Rotate180 {
 
     public static void main(String[] args) {
         int n;
-        int[][] mat = GfG.Matrices.MatUtils.create2DMatrix();
+        int[][] mat = MatUtils.create2DMatrix();
         n = mat.length;
 
-        GfG.Matrices.MatUtils.displayMatrix(mat, n, n, "BEFORE");
+        MatUtils.displayMatrix(mat, n, n, "BEFORE");
         rotate180(mat, n);
-        GfG.Matrices.MatUtils.displayMatrix(mat, n, n, "AFTER");
+        MatUtils.displayMatrix(mat, n, n, "AFTER");
     }
 }

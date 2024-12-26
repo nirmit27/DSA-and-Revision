@@ -47,13 +47,13 @@ public class SetZeroes {
 
     public static void main(String[] args) {
         int n, m;
-        int[][] matrix = GfG.Matrices.MatUtils.create2DMatrix();
+        int[][] matrix = MatUtils.create2DMatrix();
 
         n = matrix.length;
         m = matrix[0].length;
 
-        GfG.Matrices.MatUtils.displayMatrix(matrix, n, m, "BEFORE");
+        MatUtils.displayMatrix(matrix, n, m, "BEFORE");
         setZeroes(matrix, n, m);
-        GfG.Matrices.MatUtils.displayMatrix(matrix, n, m, "BEFORE");
+        MatUtils.displayMatrix(matrix, n, m, "BEFORE");
     }
 }

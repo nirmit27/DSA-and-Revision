@@ -7,27 +7,6 @@ Link : https://www.geeksforgeeks.org/problems/minimum-times-a-has-to-be-repeated
 import java.util.Scanner;
 
 public class MinRepSubstring {
-    static void computeLPSArray(String s, int[] lps) {
-        int l = 0, i = 1;
-        lps[0] = 0;
-
-        while (i < s.length()) {
-            if (s.charAt(i) == s.charAt(l)) {
-                l++;
-                lps[i] = l;
-                i++;
-            } 
-            else {
-                if (l != 0) 
-                    l = lps[l - 1];
-                else {
-                    lps[i] = 0;
-                    i++;
-                }
-            }
-        }
-    }
-
     static boolean kmpSearch(String txt, String pat, int[] lps, int reps) {
         int n = txt.length(), m = pat.length();
         int i = 0, j = 0;
@@ -39,8 +18,7 @@ public class MinRepSubstring {
 
                 if (j == m)
                     return true;
-            } 
-            else {
+            } else {
                 if (j != 0)
                     j = lps[j - 1];
                 else
@@ -53,12 +31,10 @@ public class MinRepSubstring {
     static int minReps(String s1, String s2) {
         int n = s1.length();
         int m = s2.length();
-        
-        int[] lps = new int[m];
-        computeLPSArray(s2, lps);
-        
+
+        int[] lps = StringUtils.computeLps(s2);
         int x = (m + n - 1) / n;
-        
+
         if (kmpSearch(s1, s2, lps, x))
             return x;
 
@@ -67,11 +43,11 @@ public class MinRepSubstring {
 
         return -1;
     }
-    
+
     public static void main(String[] args) {
         int res;
         String s1, s2;
-        
+
         try (Scanner sc = new Scanner(System.in)) {
             System.out.print("Enter the first string : ");
             s1 = sc.nextLine();
