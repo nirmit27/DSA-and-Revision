@@ -1,9 +1,6 @@
 package GfG.Strings;
 /* Utility functions for implementing the KMP algorithm */
 
-// import java.util.Arrays;
-// import java.util.Scanner;
-
 public class StringUtils {
     static int[] computeLps(String s) {
         int[] lps = new int[s.length()];

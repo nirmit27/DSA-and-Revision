@@ -1,4 +1,3 @@
-package Misc;
 /* 
 Finding the PIVOT element in a Rotated Sorted array
 Explanation : https://www.youtube.com/watch?v=W9QJ8HaRvJQ&t=10395s

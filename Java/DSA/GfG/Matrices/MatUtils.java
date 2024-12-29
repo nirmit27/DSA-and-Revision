@@ -62,7 +62,7 @@ public class MatUtils {
 
     public static void main(String[] args) {
         /*
-         * create2DMatrix();
+         * int[][] matrix = create2DMatrix();
          * displayMatrix(matrix, n, m, "MESSAGE");
          */
     }

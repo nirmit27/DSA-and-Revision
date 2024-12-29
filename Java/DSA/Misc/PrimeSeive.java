@@ -1,4 +1,3 @@
-package Misc;
 /* Implementation of the Sieve of Eratosthenes */
 
 import java.util.Arrays;

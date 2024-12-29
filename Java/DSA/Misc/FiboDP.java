@@ -1,10 +1,9 @@
-package Misc;
 /* Dynamic Programming approach for generating Fibonacci sequence */
 
 import java.util.Scanner;
 import java.util.HashMap;
 
-class FiboDP {
+public class FiboDP {
     public static HashMap<Integer, Integer> memo = new HashMap<>();
 
     public static int fiboTD(int n) { // Memoization
