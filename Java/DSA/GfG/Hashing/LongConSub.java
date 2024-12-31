@@ -14,10 +14,10 @@ public class LongConSub {
         for (int n : arr)
             set.add(n);
 
-        int ans = 1;
+        int ans = 1, count = 0;
         for (int n : arr) {
             if (!set.contains(n - 1)) {
-                int count = 0;
+                count = 0;
                 while (set.contains(n++))
                     count++;
                 ans = Math.max(ans, count);
@@ -28,15 +28,15 @@ public class LongConSub {
 
     public static int sortingApproch(int[] arr) {
         Arrays.sort(arr);
-        int ans = 1, count = 1, temp = Integer.MIN_VALUE;
+        int ans = 1, ctr = 1, temp = Integer.MIN_VALUE;
 
         for (int n : arr) {
             if (n == temp + 1)
-                count++;
+                ctr++;
             else if (n != temp)
-                count = 1;
+                ctr = 1;
             temp = n;
-            ans = Math.max(ans, count);
+            ans = Math.max(ans, ctr);
         }
         return ans;
     }
