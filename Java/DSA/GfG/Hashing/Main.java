@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         int[] arr;
-        int n, target, res;
+        int n, target, res, subs;
         List<List<Integer>> resList;
 
         try (Scanner sc = new Scanner(System.in)) {
@@ -27,5 +27,8 @@ public class Main {
 
         resList = HashSolutions.findTriplets(arr);
         HashSolutions.displayTriplets(resList, arr);
+
+        subs = HashSolutions.subArraySum(arr, target);
+        System.out.println(String.format("\nNumber of subarrays with sum = %d : %d", target, subs));
     }
 }

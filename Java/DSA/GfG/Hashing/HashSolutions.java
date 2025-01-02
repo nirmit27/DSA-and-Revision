@@ -1,11 +1,14 @@
 package GfG.Hashing;
 /* 
-GfG problems - 
+    Problems -
     #1 "Count pairs with given sum" solution
     Link : https://www.geeksforgeeks.org/problems/count-pairs-with-given-sum--150253/1
 
     #2 "Find All Triplets with Zero Sum" solution
     Link : https://www.geeksforgeeks.org/problems/find-all-triplets-with-zero-sum/1
+
+    #3 "Subarrays with sum K" solution
+    Link : https://www.geeksforgeeks.org/problems/subarrays-with-sum-k/1
  */
 
 import java.util.Set;
@@ -69,5 +72,19 @@ public class HashSolutions {
             }
         }
         return new ArrayList<>(set);
+    }
+
+    // Problem #3
+    public static int subArraySum(int[] arr, int k) {
+        int total = 0, count = 0;
+        Map<Integer, Integer> hm = new HashMap<>();
+
+        hm.put(0, 1);
+        for (int n : arr) {
+            total += n;
+            count += hm.getOrDefault(total - k, 0);
+            hm.put(total, hm.getOrDefault(total, 0) + 1);
+        }
+        return count;
     }
 }
