@@ -6,3 +6,4 @@ Cpp
 */*/test.*
 *.cfg
 **/Test.java
+.vscode/settings.json
