@@ -5,7 +5,6 @@ config_count = 0
 
 def print_board(board):
     global config_count
-    config_count += 1
     print(f"CONFIGURATION #{config_count}\n")
 
     queen_count = 1
@@ -54,6 +53,8 @@ def is_safe(row, col, board, columns):
 
 def n_queens_util(col, board, columns):
     if col == n:
+        global config_count
+        config_count += 1
         print_board(board)
         return
 
