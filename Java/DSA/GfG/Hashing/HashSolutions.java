@@ -1,13 +1,13 @@
 package GfG.Hashing;
 /* 
-    Problems -
-    #1 "Count pairs with given sum" solution
+    --- Problems ---
+    #1 : "Count pairs with given sum" solution
     Link : https://www.geeksforgeeks.org/problems/count-pairs-with-given-sum--150253/1
 
-    #2 "Find All Triplets with Zero Sum" solution
+    #2 : "Find All Triplets with Zero Sum" solution
     Link : https://www.geeksforgeeks.org/problems/find-all-triplets-with-zero-sum/1
 
-    #3 "Subarrays with sum K" solution
+    #3 : "Subarrays with sum K" solution
     Link : https://www.geeksforgeeks.org/problems/subarrays-with-sum-k/1
  */
 
@@ -28,7 +28,8 @@ public class HashSolutions {
         }
         System.out.println("\nPossible zero-sum triplets :");
         for (List<Integer> triplet : res)
-            System.out.println(String.format("[%d, %d, %d]", arr[triplet.get(0)], arr[triplet.get(1)], arr[triplet.get(2)]));
+            System.out.println(
+                    String.format("[%d, %d, %d]", arr[triplet.get(0)], arr[triplet.get(1)], arr[triplet.get(2)]));
     }
 
     // Problem #1

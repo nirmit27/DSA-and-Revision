@@ -14,7 +14,7 @@ public class TripletSum {
         if (arr.length == 3)
             return Arrays.stream(arr).sum() == k ? 1 : 0;
 
-        int count = 0, n = arr.length;
+        int count = 0, n = arr.length, len = 0, sum = 0, tl = 0, tr = 0;
 
         for (int i = 0; i < n - 2; i++) {
             int temp = k - arr[i];
@@ -22,20 +22,19 @@ public class TripletSum {
             int r = n - 1;
 
             while (l < r) {
-                int sum = arr[l] + arr[r];
+                sum = arr[l] + arr[r];
 
                 if (sum == temp) {
                     if (arr[l] == arr[r]) {
-                        int len = r - l + 1;
+                        len = r - l + 1;
                         count += (len * (len - 1)) / 2;
                         break;
                     } else {
-                        int tl = l;
-                        int tr = r;
+                        tl = l;
+                        tr = r;
 
                         while (l < r && arr[l] == arr[tl])
                             l++;
-
                         while (l <= r && arr[r] == arr[tr])
                             r--;
 

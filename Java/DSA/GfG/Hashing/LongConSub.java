@@ -7,20 +7,22 @@ Link : https://www.geeksforgeeks.org/problems/longest-consecutive-subsequence244
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class LongConSub {
     public static int hashingApproch(int[] arr) {
-        HashSet<Integer> set = new HashSet<>();
+        int ans = 0, temp = 0;
+        Set<Integer> set = new HashSet<>();
+
         for (int n : arr)
             set.add(n);
 
-        int ans = 1, count = 0;
         for (int n : arr) {
             if (!set.contains(n - 1)) {
-                count = 0;
+                temp = 0;
                 while (set.contains(n++))
-                    count++;
-                ans = Math.max(ans, count);
+                    temp++;
+                ans = Math.max(ans, temp);
             }
         }
         return ans;

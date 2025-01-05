@@ -23,8 +23,4 @@ public class StringUtils {
         }
         return lps;
     }
-
-    public static void main(String[] args) {
-        // TODO: C'mon, do something :P
-    }
 }
