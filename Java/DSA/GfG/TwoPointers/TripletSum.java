@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class TripletSum {
-    static int countTriplets(int[] arr, int k) {
+    public static int countTriplets(int[] arr, int k) {
         if (arr.length < 3)
             return 0;
         if (arr.length == 3)
