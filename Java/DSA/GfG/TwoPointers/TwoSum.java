@@ -1,14 +1,15 @@
-package GfG;
+package GfG.TwoPointers;
 /* 
-GfG problem - "Count pairs with given sum" solution
-Link : https://www.geeksforgeeks.org/problems/count-pairs-with-given-sum--150253/1
+GfG problems - "Count pairs with given sum" and "Pair with given sum in a sorted array" solution
+    Link #1 : https://www.geeksforgeeks.org/problems/count-pairs-with-given-sum--150253/1
+    Link #2 : https://www.geeksforgeeks.org/problems/pair-with-given-sum-in-a-sorted-array4940/1
  */
 
 import java.util.Arrays;
 
 public class TwoSum {
     public static int twoPointerApproach(int[] arr, int target) {
-        Arrays.sort(arr);
+        Arrays.sort(arr); // omit this line for problem #2
         int counter = 0, left = 0, right = arr.length - 1, sum = 0;
 
         while (left < right) {
