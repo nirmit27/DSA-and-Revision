@@ -1,4 +1,6 @@
-""" Implementation of the Graph data structure """
+""" 
+--- Implementation of the Graph data structure ---
+"""
 
 from collections import defaultdict, deque
 
@@ -55,13 +57,17 @@ class Graph:
 def main() -> None:
     graph: Graph = Graph()
 
+    # Constructing the graph
     graph.add_edge(0, 1)
     graph.add_edge(0, 2)
     graph.add_edge(1, 3)
     graph.add_edge(1, 4)
     graph.add_edge(2, 4)
 
+    # BFS traversal
     graph.bfs(src=0)
+
+    # DFS traversal
     graph.dfs(src=0)
 
 

@@ -1,9 +1,16 @@
-*.class
-*/*.cfg
-*/*.exe
+# Directories
 Cpp
-*/*/Test.*
-*/*/test.*
+**/__pycache__
+
+# Configuration files
 *.cfg
-**/Test.java
+*/*.cfg
 .vscode/settings.json
+
+# Binaries and executables
+*/*.exe
+*.class
+
+# Test scripts
+*/*/Test.*
+**/test.*

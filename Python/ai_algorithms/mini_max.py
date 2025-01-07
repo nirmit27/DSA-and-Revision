@@ -1,6 +1,6 @@
 """
 --- Implementation of the Min-Max algorithm ---
-    Detailed explanation : https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-1-introduction/
+Detailed explanation : https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-1-introduction/
 """
 
 from math import log
@@ -28,7 +28,7 @@ def read_input() -> list[int]:
     user_input: str = ""
     input_scores: list[int] = []
 
-    print("\n--- Implementation of the Min-Max algorithm ---\n")
+    print(__doc__)
 
     try:
         user_input = input("Enter the scores : ")
@@ -48,12 +48,18 @@ def read_input() -> list[int]:
     return input_scores
 
 
+def find_optimal_value(scores: list[int]) -> int:
+    height: int = round(log(len(scores), 2))
+
+    # Start as the MINIMIZER
+    optimal_value: int = mini_max_demo(0, 0, False, scores, height)
+
+    return optimal_value
+
+
 def main() -> None:
     sample_scores: list[int] = read_input() or []  # [3, 5, 2, 9, 12, 5, 23, 23]
-    height: int = round(log(len(sample_scores), 2))
-
-    optimal_value: int = mini_max_demo(0, 0, False, sample_scores, height)
-    print(f"\nOptimal value : {optimal_value}\n")
+    print(f"\nOptimal value : {find_optimal_value(sample_scores)}\n")  # 3
 
 
 if __name__ == "__main__":
