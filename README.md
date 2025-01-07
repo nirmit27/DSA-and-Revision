@@ -14,4 +14,4 @@ Primarily written in **Java**, with occasional **Python** scripts, and **C** pro
 ## Revision
 - **[C Programs](C/)**
 
-- **[Python Programs](python/ai_algorithms/)**
+- **[Python Programs](Python/ai_algorithms/)**
