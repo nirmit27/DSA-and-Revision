@@ -18,11 +18,11 @@ public class MakePalindrome {
         }
         return s.length() - dp[n][n];
     }
-    
+
     public static void main(String[] args) {
         int res;
         String s;
-        
+
         try (Scanner sc = new Scanner(System.in)) {
             System.out.print("Enter the string : ");
             s = sc.nextLine();

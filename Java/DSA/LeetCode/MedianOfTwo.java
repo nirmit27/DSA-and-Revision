@@ -10,10 +10,10 @@ public class MedianOfTwo {
     public static double median(int[] nums1, int[] nums2) {
         if (nums2.length < nums1.length)
             return median(nums2, nums1);
-        
+
         int n = nums1.length, m = nums2.length;
         int low = 0, high = n;
-        
+
         int m1 = low + (high - low) / 2;
         int m2 = (n + m + 1) / 2 - m1;
 
@@ -59,7 +59,7 @@ public class MedianOfTwo {
             System.out.print("\nEnter the elements of 1st array : ");
             for (int i = 0; i < size1; i++)
                 arr1[i] = sc.nextInt();
-            
+
             System.out.print("\nEnter the size of 2nd array : ");
             size2 = sc.nextInt();
             arr2 = new int[size2];

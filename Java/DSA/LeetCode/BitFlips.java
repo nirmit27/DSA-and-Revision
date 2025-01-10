@@ -9,7 +9,7 @@ import java.util.Scanner;
 class BitFlips {
     public static void main(String[] args) {
         int a, b, res;
-        try(Scanner sc = new Scanner(System.in)){
+        try (Scanner sc = new Scanner(System.in)) {
             System.out.print("\nEnter the target : ");
             a = sc.nextInt();
             System.out.print("\nEnter the goal : ");

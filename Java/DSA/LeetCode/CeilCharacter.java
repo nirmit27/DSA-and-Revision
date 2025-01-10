@@ -16,7 +16,7 @@ public class CeilCharacter {
 
         while (start <= end) {
             int mid = start + (end - start) / 2;
-            
+
             if (ch < arr.get(mid)) {
                 end = mid - 1;
             } else {

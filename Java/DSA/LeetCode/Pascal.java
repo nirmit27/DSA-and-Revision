@@ -20,7 +20,7 @@ public class Pascal {
 
         int numRows = triangleRows.size();
         System.out.println(String.format("\nPascal's triangle with %d rows :\n", numRows));
-        
+
         for (int i = 0; i < triangleRows.size(); i++) {
             System.out.print(" ".repeat(numRows - i));
             for (int j = 0; j < triangleRows.get(i).size(); j++) {
