@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.HashMap;
 import java.util.ArrayList;
 
-class Kadane {
+public class CountDist {
     public static void countDist(ArrayList<Integer> res, int[] arr, int k) {
         if (arr.length == 0 || k > arr.length || k <= 0)
             return;
@@ -44,7 +44,7 @@ class Kadane {
 
             System.out.print("Enter the array size : ");
             n = sc.nextInt();
-            
+
             arr = new int[n];
             System.out.print("Enter the elements : ");
             for (int i = 0; i < n; i++)
@@ -52,8 +52,8 @@ class Kadane {
         }
         countDist(res, arr, k);
         if (res.size() > 0)
-            System.out.println(String.format("\nDisinct element counts for window size %d : %s", k, res));
+            System.out.println(String.format("\nDisinct element counts for window size %d : %s\n", k, res));
         else
-            System.out.println("\nNo solution found.");
+            System.out.println("\nNo solution found.\n");
     }
 }
