@@ -5,50 +5,36 @@ Link : https://leetcode.com/problems/find-peak-element/
  */
 
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class PeakElement {
-    static int peakElement(ArrayList<Integer> arr) {
-        if (arr.size() <= 1) {
-            return 0;
+    public static int peakElement(int[] arr) {
+        int left = 0, right = arr.length - 1;
+        int mid = left + (right - left) / 2;
+
+        while (left < right) {
+            if (arr[mid] > arr[mid + 1])
+                right = mid;
+            else
+                left = mid + 1;
+            mid = left + (right - left) / 2;
         }
-
-        int n = arr.size();
-        int start = 0, end = n - 1;
-
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
-
-            if (mid > 0 && mid < (n - 1) && arr.get(mid) > arr.get(mid - 1) && arr.get(mid) > arr.get(mid + 1)) {
-                return arr.get(mid);
-            } else if (mid < (n - 1) && arr.get(mid) < arr.get(mid + 1)) {
-                start++;
-            } else {
-                end--;
-            }
-        }
-
-        if (arr.get(0) > arr.get(1)) {
-            return arr.get(0);
-        } else {
-            return arr.get(n - 1);
-        }
+        return left;
     }
 
     public static void main(String[] args) {
+        int[] arr;
         int size, result;
-        ArrayList<Integer> arr = new ArrayList<>();
 
         try (Scanner sc = new Scanner(System.in)) {
-            System.out.print("\nEnter the size of the array : ");
+            System.out.print("\nEnter the array size : ");
             size = sc.nextInt();
+
+            arr = new int[size];
             System.out.print("\nEnter the elements : ");
-            for (int i = 0; i < size; i++) {
-                int x = sc.nextInt();
-                arr.add(x);
-            }
+            for (int i = 0; i < size; i++)
+                arr[i] = sc.nextInt();
         }
         result = peakElement(arr);
-        System.out.println(String.format("\nPeak element : %d", result));
+        System.out.println(String.format("\nPeak element : %d", arr[result]));
     }
 }
