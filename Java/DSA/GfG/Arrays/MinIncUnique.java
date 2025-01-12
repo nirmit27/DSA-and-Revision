@@ -1,4 +1,4 @@
-package GfG;
+package GfG.Arrays;
 /* 
 GfG problem - "Make array elements unique" solution
 Link : https://www.geeksforgeeks.org/problems/make-array-elements-unique--170645/1

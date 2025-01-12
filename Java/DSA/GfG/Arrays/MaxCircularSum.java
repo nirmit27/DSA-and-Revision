@@ -1,4 +1,4 @@
-package GfG;
+package GfG.Arrays;
 /* 
 GfG problem - "Max Circular Subarray Sum" solution
 Link : https://www.geeksforgeeks.org/problems/max-circular-subarray-sum-1587115620/1

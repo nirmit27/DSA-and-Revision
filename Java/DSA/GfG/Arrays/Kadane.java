@@ -1,4 +1,4 @@
-package GfG;
+package GfG.Arrays;
 /* 
 GfG problem - "Kadane's Algorithm" solution
 Link : https://www.geeksforgeeks.org/problems/kadanes-algorithm-1587115620/0
