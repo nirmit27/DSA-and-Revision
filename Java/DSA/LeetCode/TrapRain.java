@@ -21,12 +21,10 @@ public class TrapRain {
 
         while (left < right) {
             if (maxLeft < maxRight) {
-                left += 1;
-                maxLeft = Math.max(maxLeft, arr.get(left));
+                maxLeft = Math.max(maxLeft, arr.get(++left));
                 res += maxLeft - arr.get(left);
             } else {
-                right -= 1;
-                maxRight = Math.max(maxRight, arr.get(right));
+                maxRight = Math.max(maxRight, arr.get(--right));
                 res += maxRight - arr.get(right);
             }
         }
