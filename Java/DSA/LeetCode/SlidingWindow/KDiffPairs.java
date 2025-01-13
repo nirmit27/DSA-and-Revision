@@ -1,4 +1,4 @@
-package LeetCode.Arrays;
+package LeetCode.SlidingWindow;
 /*
 LeetCode problem #532 solution
 Link : https://leetcode.com/problems/k-diff-pairs-in-an-array/
@@ -31,7 +31,7 @@ public class KDiffPairs {
         int n, k;
         int[] arr;
         try (Scanner sc = new Scanner(System.in)) {
-            System.out.print("Enter the value of k : ");
+            System.out.print("\nEnter the value of k : ");
             k = sc.nextInt();
             System.out.print("Enter the array size : ");
             n = sc.nextInt();
@@ -41,6 +41,6 @@ public class KDiffPairs {
             for (int i = 0; i < n; i++)
                 arr[i] = sc.nextInt();
         }
-        System.out.println(String.format("\nNumber of %d-differnce pairs = %d", k, countPairs(arr, k)));
+        System.out.println(String.format("\nNumber of %d-differnce pairs = %d\n", k, countPairs(arr, k)));
     }
 }
