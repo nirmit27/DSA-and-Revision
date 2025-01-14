@@ -1,6 +1,6 @@
 package GfG.Hashing;
 /* 
-    --- Problems ---
+    --- GfG Problems ---
     #1 : "Count pairs with given sum" solution
     Link : https://www.geeksforgeeks.org/problems/count-pairs-with-given-sum--150253/1
 

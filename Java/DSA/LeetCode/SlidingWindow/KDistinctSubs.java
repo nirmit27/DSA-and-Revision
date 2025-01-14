@@ -15,14 +15,18 @@ public class KDistinctSubs {
 
         while (j < n) {
             freq.put(arr[j], freq.getOrDefault(arr[j], 0) + 1);
+
+            // Sliding the window FORWARD
             while (freq.size() > k) {
                 freq.put(arr[i], freq.getOrDefault(arr[i], 0) - 1);
                 if (freq.get(arr[i]) == 0)
                     freq.remove(arr[i]);
                 i++;
             }
-            j++;
+            
+            // Updating the count of subarrays
             counter += j - i + 1;
+            j++;
         }
         return counter;
     }
