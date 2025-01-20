@@ -6,11 +6,35 @@ package GfG.LinkedLists;
 
     #2 : "Rotate a Linked List" solution
     Link : https://www.geeksforgeeks.org/problems/rotate-a-linked-list/1
+
+    #3 : "Merge two sorted linked lists" solution
+    Link : https://www.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1
  */
 
 import java.util.Stack;
 
 public class Operations {
+    /* Problem #3 - Sorted Merge */
+    Node sortedMerge(Node head1, Node head2) {
+        Node dummy = new Node(0);
+        Node current = dummy;
+
+        while (head1 != null && head2 != null) {
+            if (head1.data < head2.data) {
+                current.next = head1;
+                head1 = head1.next;
+            } else {
+                current.next = head2;
+                head2 = head2.next;
+            }
+            current = current.next;
+        }
+
+        if (head1 != null || head2 != null)
+            current.next = head1 == null ? head2 : head1;
+        return dummy.next;
+    }
+
     /* Problem #2 - Rotation */
     public Node rotateList(Node head, int k) {
         if (head == null || head.next == null || k == 0)
