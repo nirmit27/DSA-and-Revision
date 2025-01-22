@@ -9,11 +9,71 @@ package GfG.LinkedLists;
 
     #3 : "Merge two sorted linked lists" solution
     Link : https://www.geeksforgeeks.org/problems/merge-two-sorted-linked-lists/1
+
+    #4 : "Linked List Group Reverse" solution
+    Link : https://www.geeksforgeeks.org/problems/reverse-a-linked-list-in-groups-of-given-size/1
+
+    #5 : "Add Number Linked Lists" solution
+    Link : https://www.geeksforgeeks.org/problems/add-two-numbers-represented-by-linked-lists/1
  */
 
 import java.util.Stack;
 
 public class Operations {
+    /* Problem #5 - Add Number Lists */
+    static Node addTwoLists(Node num1, Node num2) {
+        num1 = Node.trimLeadingZeros(num1);
+        num2 = Node.trimLeadingZeros(num2);
+
+        int carry = 0;
+        int l1 = Node.countNodes(num1), l2 = Node.countNodes(num2);
+        if (l1 < l2)
+            return addTwoLists(num2, num1);
+
+        num1 = Node.reverseList(num1);
+        num2 = Node.reverseList(num2);
+        Node ans = num1;
+
+        while (num2 != null || carry != 0) {
+            num1.data += carry;
+
+            if (num2 != null) {
+                num1.data += num2.data;
+                num2 = num2.next;
+            }
+            carry = num1.data / 10;
+            num1.data = num1.data % 10;
+
+            if (num1.next == null && carry != 0)
+                num1.next = new Node(0);
+
+            num1 = num1.next;
+        }
+        return Node.reverseList(ans);
+    }
+
+    /* Problem #4 - `K`-group Reversal */
+    public static Node reverseKGroup(Node head, int k) {
+        if (head == null || k == 1)
+            return head;
+
+        Node temp = head, tHead = null;
+        int count = 0;
+
+        while (temp != null && count < k) {
+            temp = temp.next;
+            count++;
+        }
+
+        // New head for current `k` group
+        tHead = Node.reverseListK(head, k);
+
+        // Original head -> Tail of new `k` group
+        head.next = reverseKGroup(temp, k);
+
+        return tHead;
+    }
+
     /* Problem #3 - Sorted Merge */
     Node sortedMerge(Node head1, Node head2) {
         Node dummy = new Node(0);
