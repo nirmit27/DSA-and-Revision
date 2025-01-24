@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 public class LongSubSumK {
-    public static int longestSubarray(int[] arr, int k) {
+    public static int longestSubSumK(int[] arr, int k) {
         int ans = 0, prefix = 0;
         Map<Integer, Integer> map = new HashMap<>();
 
@@ -47,6 +47,6 @@ public class LongSubSumK {
             for (int i = 0; i < n; i++)
                 arr[i] = sc.nextInt();
         }
-        System.out.println(String.format("\nLongest subarray length with sum %d : %d\n", k, longestSubarray(arr, k)));
+        System.out.println(String.format("\nLongest subarray length with sum %d : %d\n", k, longestSubSumK(arr, k)));
     }
 }
