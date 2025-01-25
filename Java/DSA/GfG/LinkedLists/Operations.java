@@ -15,11 +15,73 @@ package GfG.LinkedLists;
 
     #5 : "Add Number Linked Lists" solution
     Link : https://www.geeksforgeeks.org/problems/add-two-numbers-represented-by-linked-lists/1
+
+    #6 : "Find the first node of loop in linked list" solution
+    Link : https://www.geeksforgeeks.org/problems/find-the-first-node-of-loop-in-linked-list--170645/1
+
+    #7 : "Remove loop in Linked List" solution
+    Link : https://www.geeksforgeeks.org/problems/remove-loop-in-linked-list/1
  */
 
 import java.util.Stack;
 
 public class Operations {
+    /* Problem #7 - Remove Loop */
+    public static void removeLoop(Node head) {
+        Node slow = head, fast = head;
+
+        // Step #1 : Detecting the cycle
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (slow == fast)
+                break;
+        }
+
+        // Step #2 : Determine loop node
+        if (slow == fast) {
+            slow = head;
+
+            /* Step #3 : Remove loop */
+            // Case 1 : Slow at HEAD
+            if (slow != fast) {
+                while (slow.next != fast.next) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+            } else {
+                // Case 2 : Both at HEAD
+                while (fast.next != slow)
+                    fast = fast.next;
+            }
+            fast.next = null;
+        }
+    }
+    
+    /* Problem #6 - Add Number Lists */
+    public static Node findFirstNodeLoop(Node head) {
+        Node slow = head, fast = head;
+
+        // Step #1 : Detect the cycle - Floyd's Cycle Detection Algorithm
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            // Step #2 : Determine the first node of the cycle
+            if (slow == fast) {
+                slow = head;
+
+                while (slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
+                }
+                return slow;
+            }
+        }
+        return null;
+    }
+
     /* Problem #5 - Add Number Lists */
     static Node addTwoLists(Node num1, Node num2) {
         num1 = Node.trimLeadingZeros(num1);
