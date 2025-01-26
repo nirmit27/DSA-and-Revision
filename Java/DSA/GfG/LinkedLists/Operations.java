@@ -59,7 +59,7 @@ public class Operations {
         }
     }
     
-    /* Problem #6 - Add Number Lists */
+    /* Problem #6 - Find First Node of Cycle */
     public static Node findFirstNodeLoop(Node head) {
         Node slow = head, fast = head;
 
