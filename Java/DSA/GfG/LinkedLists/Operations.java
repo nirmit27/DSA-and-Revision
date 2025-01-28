@@ -21,12 +21,92 @@ package GfG.LinkedLists;
 
     #7 : "Remove loop in Linked List" solution
     Link : https://www.geeksforgeeks.org/problems/remove-loop-in-linked-list/1
+
+    #8 : "Intersection in Y Shaped Lists" solution
+    Link : https://www.geeksforgeeks.org/problems/intersection-point-in-y-shapped-linked-lists/1
+
+    #9 : "Palindrome Linked List" solution
+    Link : https://www.geeksforgeeks.org/problems/check-if-linked-list-is-pallindrome/1
+
+    #10 : "Flattening a Linked List" solution
+    Link : https://www.geeksforgeeks.org/problems/flattening-a-linked-list/1
  */
 
 import java.util.Stack;
+import java.util.Comparator;
+import java.util.PriorityQueue; // Min Heap
 
 public class Operations {
-    /* Problem #7 - Remove Loop */
+    /* Problem #10 - Flatten a NESTED Linked List */
+    public static NestNode flatten(NestNode root) {
+        PriorityQueue<NestNode> pq = new PriorityQueue<>(Comparator.comparingInt(node -> node.data));
+        NestNode head = null, tail = null, temp = null;
+
+        while (root != null) {
+            pq.offer(root);
+            root = root.next;
+        }
+
+        while (!pq.isEmpty()) {
+            temp = pq.poll();
+
+            if (head == null) {
+                head = temp;
+                tail = temp;
+            } else {
+                tail.bottom = temp;
+                tail = tail.bottom;
+            }
+
+            if (temp.bottom != null) {
+                pq.offer(temp.bottom);
+                temp.bottom = null;
+            }
+        }
+        return head;
+    }
+
+    /* Problem #9 - Palindrome Check */
+    public static boolean isPalindrome(Node head) {
+        if (head == null || head.next == null)
+            return true;
+
+        Node fast = head, slow = head;
+
+        // Locate the middle of the linked list
+        while (fast.next != null && fast.next.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        // Reverse the latter half of the linked list
+        Node revHead = Node.reverseList(slow.next);
+        slow.next = null;
+
+        // Compare both halves of the list
+        boolean res = Node.isIdentical(head, revHead);
+
+        // Reverse the latter half BACK and link again
+        revHead = Node.reverseList(revHead);
+        slow.next = revHead;
+        return res;
+    }
+
+    /* Problem #8 - Intersection Point of two lists */
+    public static Node intersectPoint(Node head1, Node head2) {
+        Node p1 = head1, p2 = head2;
+
+        if (p1 == null || p2 == null)
+            return null;
+
+        while (p1 != p2) {
+            p1 = (p1 != null) ? p1.next : head2;
+            p2 = (p2 != null) ? p2.next : head1;
+        }
+        return p1;
+    }
+
+    /* Problem #7 - Remove cycle */
     public static void removeLoop(Node head) {
         Node slow = head, fast = head;
 
@@ -58,7 +138,7 @@ public class Operations {
             fast.next = null;
         }
     }
-    
+
     /* Problem #6 - Find First Node of Cycle */
     public static Node findFirstNodeLoop(Node head) {
         Node slow = head, fast = head;
