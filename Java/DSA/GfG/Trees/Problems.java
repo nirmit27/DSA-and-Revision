@@ -15,6 +15,12 @@ package GfG.Trees;
 
    #5 : "Construct Tree from Inorder & Preorder" solution
    Link : https://www.geeksforgeeks.org/problems/construct-tree-1/1
+
+   #6 : "Tree Boundary Traversal" solution
+   Link : https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1
+
+   #7 : "Maximum path sum from any node" solution
+   Link : https://www.geeksforgeeks.org/problems/maximum-path-sum-from-any-node/1
 */
 
 import java.util.Map;
@@ -26,6 +32,122 @@ import java.util.LinkedList;
 public class Problems {
     public int dia = 0; // Problem #3
     private static int preIndex = 0; // Problem #5
+    private int maxSum; // Problem #7
+
+    /* Problem #7 - Maximum path sum */
+    private int solve(Node node) {
+        if (node == null)
+            return 0;
+
+        int lValue = Math.max(0, solve(node.left));
+        int rValue = Math.max(0, solve(node.right));
+
+        maxSum = Math.max(maxSum, node.data + lValue + rValue);
+        return node.data + Math.max(lValue, rValue);
+    }
+
+    public int findMaxSum(Node node) {
+        maxSum = Integer.MIN_VALUE;
+        solve(node);
+
+        return maxSum;
+    }
+
+    /* Problem #6 - Boundary traversal */
+    private boolean isLeaf(Node node) {
+        return node.left == null && node.right == null;
+    }
+
+    private void collectRight(Node root, ArrayList<Integer> res) {
+        if (root == null)
+            return;
+
+        Node curr = root;
+        ArrayList<Integer> rev = new ArrayList<>();
+
+        while (!isLeaf(curr)) {
+            rev.add(curr.data);
+
+            if (curr.right != null)
+                curr = curr.right;
+            else
+                curr = curr.left;
+        }
+
+        for (int i = rev.size() - 1; i >= 0; i--)
+            res.add(rev.get(i));
+    }
+
+    private void collectLeaves(Node root, ArrayList<Integer> res) {
+        Node curr = root;
+
+        while (curr != null) {
+
+            // CASE : No LEFT child
+            if (curr.left == null) {
+
+                // CASE : Leaf Node
+                if (curr.right == null)
+                    res.add(curr.data);
+
+                curr = curr.right;
+            } else {
+
+                // CASE : Find In-order PRE-decessor
+                Node prev = curr.left;
+
+                // Find the rightmost child in the left sub-tree
+                while (prev.right != null && prev.right != curr)
+                    prev = prev.right;
+
+                // CASE : FOUND the Leaf node
+                if (prev.right == null) {
+                    prev.right = curr;
+                    curr = curr.left;
+                } else {
+                    // CASE : Repeated in-order successor
+                    if (prev.left == null)
+                        res.add(prev.data);
+
+                    prev.right = null;
+                    curr = curr.right;
+                }
+            }
+        }
+
+    }
+
+    private void collectLeft(Node root, ArrayList<Integer> res) {
+        if (root == null)
+            return;
+
+        Node curr = root;
+
+        while (!isLeaf(curr)) {
+            res.add(curr.data);
+
+            if (curr.left != null)
+                curr = curr.left;
+            else
+                curr = curr.right;
+        }
+    }
+
+    ArrayList<Integer> boundaryTraversal(Node root) {
+        ArrayList<Integer> res = new ArrayList<>();
+
+        if (root == null)
+            return res;
+
+        if (!isLeaf(root))
+            res.add(root.data);
+
+        collectLeft(root.left, res);
+        collectLeaves(root, res);
+        collectRight(root.right, res);
+
+        return res;
+    }
 
     /* Problem #5 - Construct the tree from In-order and Pre-order traversals */
     private static Node constructPI(Map<Integer, Integer> indices, int[] pre, int left, int right) {
