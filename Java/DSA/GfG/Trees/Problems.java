@@ -21,6 +21,9 @@ package GfG.Trees;
 
    #7 : "Maximum path sum from any node" solution
    Link : https://www.geeksforgeeks.org/problems/maximum-path-sum-from-any-node/1
+
+   #8 : "K Sum Paths" solution
+   Link : https://www.geeksforgeeks.org/problems/k-sum-paths/1
 */
 
 import java.util.Map;
@@ -33,6 +36,35 @@ public class Problems {
     public int dia = 0; // Problem #3
     private static int preIndex = 0; // Problem #5
     private int maxSum; // Problem #7
+
+    /* Problem #8 - K-Sum paths */
+    private int solve(Node root, Map<Integer, Integer> prefix, int current, int k) {
+        if (root == null)
+            return 0;
+
+        int count = 0;
+        current += root.data;
+
+        if (current == k)
+            count += 1;
+        count += prefix.getOrDefault(current - k, 0);
+
+        // Step 1 : Include the CURRENT PATH with +1 in frequency
+        prefix.put(current, prefix.getOrDefault(current, 0) + 1);
+
+        // Step 2 : Explore the children of the node
+        count += solve(root.left, prefix, current, k);
+        count += solve(root.right, prefix, current, k);
+
+        // Step 3 : BACKTRACK - Decrement the frequency of current sum
+        prefix.put(current, prefix.getOrDefault(current, 0) - 1);
+        return count;
+    }
+
+    public int kSumPaths(Node root, int k) {
+        Map<Integer, Integer> prefix = new HashMap<>();
+        return solve(root, prefix, 0, k);
+    }
 
     /* Problem #7 - Maximum path sum */
     private int solve(Node node) {
