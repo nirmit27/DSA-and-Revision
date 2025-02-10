@@ -1,6 +1,7 @@
 # Directories
 Cpp
 **/__pycache__
+**/Test_Dir
 
 # Configuration files
 *.cfg
