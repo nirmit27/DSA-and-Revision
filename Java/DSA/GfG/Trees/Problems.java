@@ -24,11 +24,19 @@ package GfG.Trees;
 
    #8 : "K Sum Paths" solution
    Link : https://www.geeksforgeeks.org/problems/k-sum-paths/1
+
+   #9 : "Fixing Two nodes of a BST" solution
+   Link : https://www.geeksforgeeks.org/problems/fixed-two-nodes-of-a-bst/1
+
+   #10 : "Pair Sum in BST" solution
+   Link : https://www.geeksforgeeks.org/problems/find-a-pair-with-given-target-in-bst/1
 */
 
 import java.util.Map;
+import java.util.Set;
 import java.util.Queue;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
@@ -36,6 +44,78 @@ public class Problems {
     public int dia = 0; // Problem #3
     private static int preIndex = 0; // Problem #5
     private int maxSum; // Problem #7
+
+    /* Problem #9 */
+    private Node first;
+    private Node mid;
+    private Node last;
+    private Node prev;
+
+    /* Problem #10 - Pair Sum */
+    private boolean dfs(Node root, Set<Integer> set, int target) {
+        if (root == null)
+            return false;
+
+        if (set.contains(target - root.data))
+            return true;
+
+        set.add(root.data);
+
+        return dfs(root.left, set, target) || dfs(root.right, set, target);
+    }
+
+    public boolean findTarget(Node root, int target) {
+        if (root == null)
+            return false;
+
+        Set<Integer> set = new HashSet<>();
+        return dfs(root, set, target);
+    }
+
+    /* Problem #9 - Fix the BST */
+    private void swap(Node a, Node b) {
+        int temp = a.data;
+        a.data = b.data;
+        b.data = temp;
+    }
+
+    private void solve2(Node root) {
+        if (root == null)
+            return;
+
+        // Left sub-tree ...
+        solve2(root.left);
+
+        // Check for violation ...
+        if (prev != null && prev.data > root.data) {
+            if (first == null) { // Case 1
+                first = prev;
+                mid = root;
+            } else // Case 2
+                last = root;
+        }
+        prev = root;
+
+        // Right sub-tree ...
+        solve2(root.right);
+    }
+
+    public void correctBST(Node root) {
+        first = null;
+        mid = null;
+        last = null;
+        prev = null;
+
+        solve2(root);
+
+        // Case 1 : Non-adjacent positions
+        if (first != null && last != null)
+            swap(first, last);
+
+        // Case 2 : Adjacent positions
+        else if (first != null && mid != null)
+            swap(first, mid);
+    }
 
     /* Problem #8 - K-Sum paths */
     private int solve(Node root, Map<Integer, Integer> prefix, int current, int k) {
