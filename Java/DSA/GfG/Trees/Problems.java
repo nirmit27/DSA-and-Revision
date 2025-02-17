@@ -30,6 +30,15 @@ package GfG.Trees;
 
    #10 : "Pair Sum in BST" solution
    Link : https://www.geeksforgeeks.org/problems/find-a-pair-with-given-target-in-bst/1
+
+   #11 : "Serialize and deserialize a binary tree" solution
+   Link : https://www.geeksforgeeks.org/problems/serialize-and-deserialize-a-binary-tree/1
+
+   #12 : "Symmetric Tree" solution
+   Link : https://www.geeksforgeeks.org/problems/symmetric-tree/1
+
+   #13 : "Balanced Tree Check" solution
+   Link : https://www.geeksforgeeks.org/problems/check-for-balanced-tree/1
 */
 
 import java.util.Map;
@@ -50,6 +59,103 @@ public class Problems {
     private Node mid;
     private Node last;
     private Node prev;
+
+    /* Problem #13 - Balance of a BST */
+    private int solveP13(Node root) {
+        if (root == null)
+            return 0;
+
+        int lh = solveP13(root.left);
+        int rh = solveP13(root.right);
+
+        if (lh == -1 || rh == -1 || Math.abs(lh - rh) > 1)
+            return -1;
+
+        return 1 + Math.max(lh, rh);
+    }
+
+    public boolean isBalanced(Node root) {
+        return solveP13(root) > 0;
+    }
+
+    /* Problem #12 - Symmetry of a BST */
+    private static boolean solveP12(Node left, Node right) {
+        if (left == null && right == null)
+            return true;
+
+        if (left == null || right == null || left.data != right.data)
+            return false;
+
+        return solveP12(left.left, right.right) && solveP12(left.right, right.left);
+    }
+
+    public static boolean isSymmetric(Node root) {
+        if (root == null)
+            return true;
+
+        return solveP12(root.left, root.right);
+    }
+
+    /* Problem #11 - Serialization and Deserialization of a BST */
+    private Node createNode(int index, ArrayList<Integer> data) {
+        if (index >= data.size() || data.get(index) == null)
+            return null;
+        return new Node(data.get(index));
+    }
+
+    public ArrayList<Integer> serialize(Node root) {
+        int size = 0;
+        Queue<Node> q = new LinkedList<>();
+        ArrayList<Integer> res = new ArrayList<>();
+
+        q.add(root);
+        res.add(root.data);
+
+        while (!q.isEmpty()) {
+            size = q.size();
+
+            while (size-- > 0) {
+                Node curr = q.poll();
+                Node left = curr.left;
+                Node right = curr.right;
+
+                res.add(left != null ? left.data : null);
+                if (left != null)
+                    q.add(left);
+
+                res.add(right != null ? right.data : null);
+                if (right != null)
+                    q.add(right);
+            }
+        }
+        return res;
+    }
+
+    public Node deSerialize(ArrayList<Integer> arr) {
+        int size = 0, index = 1;
+        Node root = new Node(arr.get(0));
+        Queue<Node> q = new LinkedList<>();
+
+        q.add(root);
+        while (!q.isEmpty()) {
+            size = q.size();
+
+            while (size-- > 0) {
+                Node current = q.poll();
+                Node left = createNode(index++, arr);
+                Node right = createNode(index++, arr);
+
+                current.left = left;
+                current.right = right;
+
+                if (left != null)
+                    q.add(left);
+                if (right != null)
+                    q.add(right);
+            }
+        }
+        return root;
+    }
 
     /* Problem #10 - Pair Sum */
     private boolean dfs(Node root, Set<Integer> set, int target) {
@@ -79,12 +185,12 @@ public class Problems {
         b.data = temp;
     }
 
-    private void solve2(Node root) {
+    private void solveP11(Node root) {
         if (root == null)
             return;
 
         // Left sub-tree ...
-        solve2(root.left);
+        solveP11(root.left);
 
         // Check for violation ...
         if (prev != null && prev.data > root.data) {
@@ -97,7 +203,7 @@ public class Problems {
         prev = root;
 
         // Right sub-tree ...
-        solve2(root.right);
+        solveP11(root.right);
     }
 
     public void correctBST(Node root) {
@@ -106,7 +212,7 @@ public class Problems {
         last = null;
         prev = null;
 
-        solve2(root);
+        solveP11(root);
 
         // Case 1 : Non-adjacent positions
         if (first != null && last != null)
@@ -118,7 +224,7 @@ public class Problems {
     }
 
     /* Problem #8 - K-Sum paths */
-    private int solve(Node root, Map<Integer, Integer> prefix, int current, int k) {
+    private int solveP8(Node root, Map<Integer, Integer> prefix, int current, int k) {
         if (root == null)
             return 0;
 
@@ -133,8 +239,8 @@ public class Problems {
         prefix.put(current, prefix.getOrDefault(current, 0) + 1);
 
         // Step 2 : Explore the children of the node
-        count += solve(root.left, prefix, current, k);
-        count += solve(root.right, prefix, current, k);
+        count += solveP8(root.left, prefix, current, k);
+        count += solveP8(root.right, prefix, current, k);
 
         // Step 3 : BACKTRACK - Decrement the frequency of current sum
         prefix.put(current, prefix.getOrDefault(current, 0) - 1);
@@ -143,16 +249,16 @@ public class Problems {
 
     public int kSumPaths(Node root, int k) {
         Map<Integer, Integer> prefix = new HashMap<>();
-        return solve(root, prefix, 0, k);
+        return solveP8(root, prefix, 0, k);
     }
 
     /* Problem #7 - Maximum path sum */
-    private int solve(Node node) {
+    private int solveP7(Node node) {
         if (node == null)
             return 0;
 
-        int lValue = Math.max(0, solve(node.left));
-        int rValue = Math.max(0, solve(node.right));
+        int lValue = Math.max(0, solveP7(node.left));
+        int rValue = Math.max(0, solveP7(node.right));
 
         maxSum = Math.max(maxSum, node.data + lValue + rValue);
         return node.data + Math.max(lValue, rValue);
@@ -160,7 +266,7 @@ public class Problems {
 
     public int findMaxSum(Node node) {
         maxSum = Integer.MIN_VALUE;
-        solve(node);
+        solveP7(node);
 
         return maxSum;
     }

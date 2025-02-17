@@ -1,0 +1,12 @@
+package LeetCode.Trees;
+/* Sample implementation of a Binary Tree node */
+
+public class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int x) {
+        val = x;
+    }
+}
