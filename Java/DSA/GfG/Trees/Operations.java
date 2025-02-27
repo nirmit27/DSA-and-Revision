@@ -1,43 +1,37 @@
 package GfG.Trees;
 /* 
    --- GfG Problems ---
-   #1 : "Level order traversal" solution
-   Link : https://www.geeksforgeeks.org/problems/level-order-traversal/1
-
-   #2 : "Height of Binary Tree" solution
+   #1 : "Height of Binary Tree" solution
    Link : https://www.geeksforgeeks.org/problems/height-of-binary-tree/1
 
-   #3 : "Diameter of a Binary Tree" solution
+   #2 : "Diameter of a Binary Tree" solution
    Link : https://www.geeksforgeeks.org/problems/diameter-of-binary-tree/1
 
-   #4 : "Mirror Tree" solution
+   #3 : "Mirror Tree" solution
    Link : https://www.geeksforgeeks.org/problems/mirror-tree/1
 
-   #5 : "Construct Tree from Inorder & Preorder" solution
+   #4 : "Construct Tree from Inorder & Preorder" solution
    Link : https://www.geeksforgeeks.org/problems/construct-tree-1/1
 
-   #6 : "Tree Boundary Traversal" solution
-   Link : https://www.geeksforgeeks.org/problems/boundary-traversal-of-binary-tree/1
-
-   #7 : "Maximum path sum from any node" solution
+   #5 : "Maximum path sum from any node" solution
    Link : https://www.geeksforgeeks.org/problems/maximum-path-sum-from-any-node/1
 
-   #8 : "K Sum Paths" solution
+   #6 : "K Sum Paths" solution
    Link : https://www.geeksforgeeks.org/problems/k-sum-paths/1
 
-   #9 : "Fixing Two nodes of a BST" solution
+   #7 : "Fixing Two nodes of a BST" solution
    Link : https://www.geeksforgeeks.org/problems/fixed-two-nodes-of-a-bst/1
 
-   #10 : "Pair Sum in BST" solution
+   #8 : "Pair Sum in BST" solution
    Link : https://www.geeksforgeeks.org/problems/find-a-pair-with-given-target-in-bst/1
 
-   #11 : "Serialize and deserialize a binary tree" solution
+   #9 : "Serialize and deserialize a binary tree" solution
    Link : https://www.geeksforgeeks.org/problems/serialize-and-deserialize-a-binary-tree/1
 
-   #12 : "Symmetric Tree" solution
+   #10 : "Symmetric Tree" solution
    Link : https://www.geeksforgeeks.org/problems/symmetric-tree/1
 
-   #13 : "Balanced Tree Check" solution
+   #11 : "Balanced Tree Check" solution
    Link : https://www.geeksforgeeks.org/problems/check-for-balanced-tree/1
 */
 
@@ -49,18 +43,18 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-public class Problems {
-    public int dia = 0; // Problem #3
-    private static int preIndex = 0; // Problem #5
-    private int maxSum; // Problem #7
+public class Operations {
+    public int dia = 0;
+    private int maxSum; 
+    private static int preIndex = 0;
 
-    /* Problem #9 */
     private Node first;
     private Node mid;
     private Node last;
     private Node prev;
 
-    /* Problem #13 - Balance of a BST */
+
+    /* Problem #11 - Balance of a BST */
     private int solveP13(Node root) {
         if (root == null)
             return 0;
@@ -78,7 +72,8 @@ public class Problems {
         return solveP13(root) > 0;
     }
 
-    /* Problem #12 - Symmetry of a BST */
+
+    /* Problem #10 - Symmetry of a BST */
     private static boolean solveP12(Node left, Node right) {
         if (left == null && right == null)
             return true;
@@ -96,7 +91,8 @@ public class Problems {
         return solveP12(root.left, root.right);
     }
 
-    /* Problem #11 - Serialization and Deserialization of a BST */
+
+    /* Problem #9 - Serialization and Deserialization of a BST */
     private Node createNode(int index, ArrayList<Integer> data) {
         if (index >= data.size() || data.get(index) == null)
             return null;
@@ -157,7 +153,8 @@ public class Problems {
         return root;
     }
 
-    /* Problem #10 - Pair Sum */
+
+    /* Problem #8 - Pair Sum */
     private boolean dfs(Node root, Set<Integer> set, int target) {
         if (root == null)
             return false;
@@ -178,7 +175,8 @@ public class Problems {
         return dfs(root, set, target);
     }
 
-    /* Problem #9 - Fix the BST */
+
+    /* Problem #7 - Fix the BST */
     private void swap(Node a, Node b) {
         int temp = a.data;
         a.data = b.data;
@@ -223,7 +221,8 @@ public class Problems {
             swap(first, mid);
     }
 
-    /* Problem #8 - K-Sum paths */
+
+    /* Problem #6 - K-Sum paths */
     private int solveP8(Node root, Map<Integer, Integer> prefix, int current, int k) {
         if (root == null)
             return 0;
@@ -252,7 +251,8 @@ public class Problems {
         return solveP8(root, prefix, 0, k);
     }
 
-    /* Problem #7 - Maximum path sum */
+
+    /* Problem #5 - Maximum path sum */
     private int solveP7(Node node) {
         if (node == null)
             return 0;
@@ -271,103 +271,8 @@ public class Problems {
         return maxSum;
     }
 
-    /* Problem #6 - Boundary traversal */
-    private boolean isLeaf(Node node) {
-        return node.left == null && node.right == null;
-    }
 
-    private void collectRight(Node root, ArrayList<Integer> res) {
-        if (root == null)
-            return;
-
-        Node curr = root;
-        ArrayList<Integer> rev = new ArrayList<>();
-
-        while (!isLeaf(curr)) {
-            rev.add(curr.data);
-
-            if (curr.right != null)
-                curr = curr.right;
-            else
-                curr = curr.left;
-        }
-
-        for (int i = rev.size() - 1; i >= 0; i--)
-            res.add(rev.get(i));
-    }
-
-    private void collectLeaves(Node root, ArrayList<Integer> res) {
-        Node curr = root;
-
-        while (curr != null) {
-
-            // CASE : No LEFT child
-            if (curr.left == null) {
-
-                // CASE : Leaf Node
-                if (curr.right == null)
-                    res.add(curr.data);
-
-                curr = curr.right;
-            } else {
-
-                // CASE : Find In-order PRE-decessor
-                Node prev = curr.left;
-
-                // Find the rightmost child in the left sub-tree
-                while (prev.right != null && prev.right != curr)
-                    prev = prev.right;
-
-                // CASE : FOUND the Leaf node
-                if (prev.right == null) {
-                    prev.right = curr;
-                    curr = curr.left;
-                } else {
-                    // CASE : Repeated in-order successor
-                    if (prev.left == null)
-                        res.add(prev.data);
-
-                    prev.right = null;
-                    curr = curr.right;
-                }
-            }
-        }
-
-    }
-
-    private void collectLeft(Node root, ArrayList<Integer> res) {
-        if (root == null)
-            return;
-
-        Node curr = root;
-
-        while (!isLeaf(curr)) {
-            res.add(curr.data);
-
-            if (curr.left != null)
-                curr = curr.left;
-            else
-                curr = curr.right;
-        }
-    }
-
-    ArrayList<Integer> boundaryTraversal(Node root) {
-        ArrayList<Integer> res = new ArrayList<>();
-
-        if (root == null)
-            return res;
-
-        if (!isLeaf(root))
-            res.add(root.data);
-
-        collectLeft(root.left, res);
-        collectLeaves(root, res);
-        collectRight(root.right, res);
-
-        return res;
-    }
-
-    /* Problem #5 - Construct the tree from In-order and Pre-order traversals */
+    /* Problem #4 - Construct the tree from In-order and Pre-order traversals */
     private static Node constructPI(Map<Integer, Integer> indices, int[] pre, int left, int right) {
         // BASE CASE: In-order array exhausted
         if (left > right)
@@ -395,7 +300,8 @@ public class Problems {
         return constructPI(indices, preorder, 0, inorder.length - 1);
     }
 
-    /* Problem #4 - Invert the tree */
+
+    /* Problem #3 - Invert the tree */
     public void invert(Node root) {
         if (root == null)
             return;
@@ -408,6 +314,8 @@ public class Problems {
         invert(root.right);
     }
 
+
+    /* Problem #2 - Diameter */
     private int dfs(Node root) {
         if (root == null)
             return 0;
@@ -419,7 +327,6 @@ public class Problems {
         return 1 + Math.max(lh, rh);
     }
 
-    /* Problem #3 - Diameter */
     public int diameter(Node root) {
         if (root == null)
             return 0;
@@ -428,40 +335,11 @@ public class Problems {
         return dia;
     }
 
-    /* Problem #2 - Height */
+
+    /* Problem #1 - Height */
     public int height(Node root) {
         if (root == null)
             return 0;
-
         return 1 + Math.max(height(root.left), height(root.right));
-    }
-
-    /* Problem #1 - Level-order traversal */
-    public static ArrayList<ArrayList<Integer>> levelOrder(Node root) {
-        ArrayList<ArrayList<Integer>> res = new ArrayList<>();
-        if (root == null)
-            return res;
-
-        Queue<Node> q = new LinkedList<>();
-        int size = 0, level = 0;
-        Node current = null;
-
-        q.add(root);
-        while (!q.isEmpty()) {
-            size = q.size();
-            res.add(new ArrayList<>());
-
-            while (size-- > 0) {
-                current = q.poll();
-                res.get(level).add(current.data);
-
-                if (current.left != null)
-                    q.add(current.left);
-                if (current.right != null)
-                    q.add(current.right);
-            }
-            level++;
-        }
-        return res;
     }
 }

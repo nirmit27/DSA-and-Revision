@@ -7,7 +7,7 @@ from math import log
 from json import loads, JSONDecodeError
 
 
-MAX, MIN = 10**9, -(10**9)  # Simulating positive and negative infinity
+MAX, MIN = int(1e9), int(-1e9)  # Simulating the values of positive and negative infinity
 
 
 def ab_pruning_demo(
