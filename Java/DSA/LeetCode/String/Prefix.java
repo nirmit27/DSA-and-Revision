@@ -1,4 +1,4 @@
-package LeetCode.Strings;
+package LeetCode.String;
 /* 
 LeetCode problem #14 solution
 Link : https://leetcode.com/problems/longest-common-prefix/

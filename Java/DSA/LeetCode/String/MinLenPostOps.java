@@ -1,4 +1,4 @@
-package LeetCode.Strings;
+package LeetCode.String;
 /*
 LeetCode problem #3233 solution
 Link : https://leetcode.com/problems/minimum-length-of-string-after-operations/

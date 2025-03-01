@@ -1,4 +1,4 @@
-package LeetCode.Strings;
+package LeetCode.String;
 /* 
 LeetCode problem #151 solution
 Link : https://leetcode.com/problems/reverse-words-in-a-string/

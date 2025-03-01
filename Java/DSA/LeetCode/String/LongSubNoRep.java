@@ -1,4 +1,4 @@
-package LeetCode.Strings;
+package LeetCode.String;
 /*
 LeetCode problem #3 solution
 Link : https://leetcode.com/problems/longest-substring-without-repeating-characters/

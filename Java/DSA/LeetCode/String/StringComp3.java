@@ -1,4 +1,4 @@
-package LeetCode.Strings;
+package LeetCode.String;
 /* 
 LeetCode problem #3163 solution
 Link : https://leetcode.com/problems/string-compression-iii/

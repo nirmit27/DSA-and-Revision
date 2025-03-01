@@ -1,4 +1,4 @@
-package LeetCode.Strings;
+package LeetCode.String;
 /* 
 LeetCode problem #1930 solution
 Link : https://leetcode.com/problems/unique-length-3-palindromic-subsequences/
