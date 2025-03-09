@@ -1,4 +1,4 @@
-package Beans;
+package College.Beans;
 
 /* An example of a Java Bean. */
 import java.io.Serializable;

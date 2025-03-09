@@ -1,4 +1,4 @@
-package CalcPack;
+package College.CalcPack;
 
 import java.text.DecimalFormat;
 

@@ -1,4 +1,4 @@
-package CalcPack;
+package College.CalcPack;
 
 public class Calc1 {
     public int add(int x, int y) {

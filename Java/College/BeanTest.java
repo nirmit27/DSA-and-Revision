@@ -2,7 +2,8 @@
 package College;
 
 import java.util.Scanner;
-import Beans.Employee;
+
+import College.Beans.Employee;
 
 public class BeanTest {
     public static void main(String[] args) {
