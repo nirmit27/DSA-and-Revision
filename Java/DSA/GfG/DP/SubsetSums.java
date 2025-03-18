@@ -14,7 +14,7 @@ public class SubsetSums {
     /* Problem #2 */
     private static Boolean[][] memo;
 
-    private static boolean solve(int sum, int i, int[] arr) {
+    private static boolean solve2(int sum, int i, int[] arr) {
         if (i == arr.length)
             return sum == 0;
 
@@ -24,8 +24,8 @@ public class SubsetSums {
         memo[i][sum] = false;
 
         if (arr[i] <= sum)
-            memo[i][sum] |= solve(sum - arr[i], i + 1, arr);
-        memo[i][sum] |= solve(sum, i + 1, arr);
+            memo[i][sum] |= solve2(sum - arr[i], i + 1, arr);
+        memo[i][sum] |= solve2(sum, i + 1, arr);
 
         return memo[i][sum];
     }
@@ -39,11 +39,11 @@ public class SubsetSums {
         int target = sum / 2;
         memo = new Boolean[n][target + 1];
 
-        return solve(target, 0, arr);
+        return solve2(target, 0, arr);
     }
 
     /* Problem #1 */
-    private static Boolean solve(int[][] dp, int[] arr, int n, int sum) {
+    private static Boolean solve1(int[][] dp, int[] arr, int n, int sum) {
         if (sum == 0)
             return true;
 
@@ -54,9 +54,9 @@ public class SubsetSums {
             return dp[n][sum] == 1;
 
         if (arr[n - 1] > sum)
-            dp[n][sum] = solve(dp, arr, n - 1, sum) ? 1 : 0;
+            dp[n][sum] = solve1(dp, arr, n - 1, sum) ? 1 : 0;
         else
-            dp[n][sum] = (solve(dp, arr, n - 1, sum - arr[n - 1]) || solve(dp, arr, n - 1, sum)) ? 1 : 0;
+            dp[n][sum] = (solve1(dp, arr, n - 1, sum - arr[n - 1]) || solve1(dp, arr, n - 1, sum)) ? 1 : 0;
 
         return dp[n][sum] == 1;
     }
@@ -67,7 +67,7 @@ public class SubsetSums {
 
         for (int[] a : dp)
             Arrays.fill(a, -1);
-        return solve(dp, arr, n, sum);
+        return solve1(dp, arr, n, sum);
     }
 
     public static void main(String[] args) {
