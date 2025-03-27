@@ -4,7 +4,7 @@ GfG problem - "Word Break" solution
 Link : https://www.geeksforgeeks.org/problems/word-break1352/1
  */
 
-import ava.util.Scanner;
+// import java.util.Scanner;
 
 public class WordBreak {
     public boolean wordBreak(String s, String[] dictionary) {
