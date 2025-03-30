@@ -6,8 +6,8 @@ Link : https://www.geeksforgeeks.org/problems/minimum-platforms-1587115620/1
 
 import java.util.Arrays;
 
-public class MinPlats {
-    public static int findPlatform(int arr[], int dep[]) {
+public class MinPlatforms {
+    public static int minPlatforms(int arr[], int dep[]) {
         Arrays.sort(arr);
         Arrays.sort(dep);
 
