@@ -18,19 +18,20 @@ import java.util.LinkedList;
 
 public class Traversals {
     // Problem #3 - Topological sort [DIRECTED]
-    private static void topoSortUtil(int src, ArrayList<Integer>[] adjList, boolean[] visited, Stack<Integer> stack) {
+    private static void topoSortUtil(int src, ArrayList<ArrayList<Integer>> adjList, boolean[] visited,
+            Stack<Integer> stack) {
         visited[src] = true;
 
-        for (int ngbr : adjList[src]) {
+        for (int ngbr : adjList.get(src)) {
             if (!visited[ngbr])
                 topoSortUtil(ngbr, adjList, visited, stack);
         }
-        
+
         stack.push(src);
     }
 
     public static ArrayList<Integer> topoSort(int V, int[][] edges) {
-        ArrayList<Integer>[] adjList = new ArrayList[V];
+        ArrayList<ArrayList<Integer>> adjList = new ArrayList<>();
         ArrayList<Integer> res = new ArrayList<>();
 
         Stack<Integer> stack = new Stack<>();
@@ -38,10 +39,10 @@ public class Traversals {
 
         // Step #1 : Construct the adjacency list.
         for (int i = 0; i < V; i++)
-            adjList[i] = new ArrayList<>();
+            adjList.add(new ArrayList<>());
 
         for (int[] edge : edges)
-            adjList[edge[0]].add(edge[1]);
+            adjList.get(edge[0]).add(edge[1]);
 
         // Step #2 : Traverse the graph via DFS.
         for (int i = 0; i < V; i++) {

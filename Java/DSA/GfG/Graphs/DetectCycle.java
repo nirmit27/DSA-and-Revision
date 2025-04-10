@@ -13,34 +13,34 @@ import java.util.List;
 
 public class DetectCycle {
     // Problem #2 - Directed graph
-    private boolean dfs(int src, List<Integer>[] adjList, boolean[] visited, boolean[] backtracker) {
+    private boolean dfs(int src, List<List<Integer>> adjList, boolean[] visited, boolean[] backtracker) {
         visited[src] = true;
         backtracker[src] = true;
-        
-        for (int ngbr : adjList[src]) {
+
+        for (int ngbr : adjList.get(src)) {
             if (!visited[ngbr] && dfs(ngbr, adjList, visited, backtracker))
                 return true;
             else if (backtracker[ngbr])
                 return true;
         }
-        
+
         // Backtrack to update parent node adjacency status.
         backtracker[src] = false;
         return false;
     }
-    
+
     public boolean isCyclic(int V, int[][] edges) {
-        List<Integer>[] adjList = new ArrayList[V];
+        List<List<Integer>> adjList = new ArrayList<>();
         boolean[] visited = new boolean[V];
         boolean[] backtracker = new boolean[V];
-        
+
         // Step #1: Construct the adjacency list.
         for (int i = 0; i < V; i++)
-            adjList[i] = new ArrayList<>();
-            
+            adjList.add(new ArrayList<>());
+
         for (int[] edge : edges)
-            adjList[edge[0]].add(edge[1]);
-        
+            adjList.get(edge[0]).add(edge[1]);
+
         // Step #2: Perform DFS traversal while checking for cycle.
         for (int i = 0; i < V; i++) {
             if (!visited[i] && dfs(i, adjList, visited, backtracker))
@@ -50,10 +50,10 @@ public class DetectCycle {
     }
 
     // Problem #1 - Undirected graph
-    public static boolean dfs(int src, int parent, ArrayList<Integer>[] adjList, boolean[] visited) {
+    public static boolean dfs(int src, int parent, ArrayList<ArrayList<Integer>> adjList, boolean[] visited) {
         visited[src] = true;
 
-        for (int ngbr : adjList[src]) {
+        for (int ngbr : adjList.get(src)) {
             if (!visited[ngbr]) {
                 if (dfs(ngbr, src, adjList, visited))
                     return true;
@@ -66,14 +66,14 @@ public class DetectCycle {
 
     public static boolean undirectedCycle(int V, int[][] edges) {
         boolean[] visited = new boolean[V];
-        ArrayList<Integer>[] adjList = new ArrayList[V];
+        ArrayList<ArrayList<Integer>> adjList = new ArrayList<>();
 
         for (int i = 0; i < V; i++)
-            adjList[i] = new ArrayList<>();
+            adjList.add(new ArrayList<>());
 
         for (int[] edge : edges) {
-            adjList[edge[0]].add(edge[1]);
-            adjList[edge[1]].add(edge[0]);
+            adjList.get(edge[0]).add(edge[1]);
+            adjList.get(edge[1]).add(edge[0]);
         }
 
         for (int i = 0; i < V; i++) {
