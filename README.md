@@ -8,4 +8,4 @@
 ## Revision
 - **[C Programs](C/)**
 
-- **[Python Programs](Python/ai_algorithms/)**
+- **[Python Programs](python/)**
