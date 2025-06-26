@@ -1,4 +1,4 @@
-""" Implementation of Heap Sort """
+"""Implementation of Heap Sort"""
 
 
 def max_heapify(arr, n, i):

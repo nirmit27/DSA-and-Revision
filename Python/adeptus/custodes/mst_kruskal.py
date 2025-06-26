@@ -1,4 +1,4 @@
-""" Finding the Minimum Spanning Tree using Kruskal's Algorithm """
+"""Finding the Minimum Spanning Tree using Kruskal's Algorithm"""
 
 
 class Edge:
@@ -79,5 +79,4 @@ if __name__ == "__main__":
         data.append(edge)
 
     Edge.display_edges(data)
-
     print(f"\nTotal cost of the Minimum Spanning Tree = {mst(data, n)}")

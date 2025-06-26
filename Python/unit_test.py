@@ -1,6 +1,10 @@
+"""
+Unit Tests
+"""
+
 import unittest
-from ai_algorithms.mini_max import find_optimal_value as minimax
-from ai_algorithms.ab_pruning import find_optimal_value as alphabeta
+from administratum.mini_max import find_optimal_value as minimax
+from administratum.ab_pruning import find_optimal_value as alphabeta
 
 
 class TestAIAlgorithms(unittest.TestCase):

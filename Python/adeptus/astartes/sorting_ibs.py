@@ -1,5 +1,5 @@
 """
-Revision of sorting algorithms :)
+Revision of sorting algorithms
 """
 
 

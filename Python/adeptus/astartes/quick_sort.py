@@ -1,4 +1,4 @@
-""" Implementation of Quick Sort """
+"""Implementation of Quick Sort"""
 
 
 def partition(arr, low, high) -> int:

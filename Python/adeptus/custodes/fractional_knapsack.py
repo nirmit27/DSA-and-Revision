@@ -1,4 +1,4 @@
-""" Implementation of the Knapsack Problem - Greedy Solution """
+"""Implementation of the Knapsack Problem - Greedy Solution"""
 
 
 class Item:
@@ -35,7 +35,6 @@ def fractional_knapsack(capacity, array):
 
 
 if __name__ == "__main__":
-
     arr = []
 
     w = int(input("Enter the Knapsack capacity (in kg): "))

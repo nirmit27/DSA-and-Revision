@@ -1,4 +1,4 @@
-""" Implementation of Merge Sort """
+"""Implementation of Merge Sort"""
 
 
 def merge_sort(arr):

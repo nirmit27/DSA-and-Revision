@@ -1,4 +1,4 @@
-""" Solution to the Travelling Salesman Problem using Dynamic Programming """
+"""Solution to the Travelling Salesman Problem using Dynamic Programming"""
 
 import sys
 

@@ -1,4 +1,4 @@
-""" Solution to the N-Queen problem using Backtracking """
+"""Solution to the N-Queen problem using Backtracking"""
 
 config_count = 0
 
@@ -75,5 +75,4 @@ if __name__ == "__main__":
     print(f"\nThe possible configurations for the {n}-Queen problem are:\n")
 
     n_queens(n)
-
     print(f"Total number of configurations = {config_count}")
