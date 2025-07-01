@@ -5,7 +5,7 @@ Link: https://leetcode.com/problems/count-binary-substrings/
 
 
 class CBS:
-    def countBinarySubstrings(self, s: str) -> int:
+    def count_binary_substrings(self, s: str) -> int:
         ans: int = 0
         pc: int = 0
         cc: int = 1
