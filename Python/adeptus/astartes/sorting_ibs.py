@@ -48,11 +48,11 @@ def insertion_sort(array: list[int]) -> None:
             array[j + 1] = array[j]
             j -= 1
 
-            array[j + 1] = k
+        array[j + 1] = k
 
 
 def main() -> None:
-    """Revision of sorting algorithms."""
+    """Revision of sorting algorithms"""
     try:
         arr: list = list(map(int, input("Array : ").split(" ")))
         assert all(
