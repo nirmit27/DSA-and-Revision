@@ -53,8 +53,5 @@ class Trie:
         return True
 
 
-def main() -> None: ...
-
-
 if __name__ == "__main__":
-    main()
+    print("\n--- Trie Implementation ---\n")

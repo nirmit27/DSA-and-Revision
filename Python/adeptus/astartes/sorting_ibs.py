@@ -62,8 +62,8 @@ def main() -> None:
         print(f"\nERROR : {e}\nExiting ...")
         exit(1)
 
-    # insertion_sort(arr)
-    bubble_sort(arr)
+    insertion_sort(arr)
+    # bubble_sort(arr)
     # selection_sort(arr)
 
     print(f"\nResult : {arr}")
