@@ -54,14 +54,12 @@ def insertion_sort(array: list[int]) -> None:
 def main() -> None:
     """Revision of sorting algorithms"""
     try:
-        arr: list = list(map(int, input("Array : ").split(" ")))
-        assert all(
-            isinstance(x, int) for x in arr
-        )  # Input validation is important, my dude.
+        arr: list = input("Array : ").split()
+        assert all(x.isdigit() or int(x) for all x in arr), "Error : Invalid input."
     except Exception as e:
-        print(f"\nERROR : {e}\nExiting ...")
-        exit(1)
+        exit(print(f"\nError : {e}\n"))
 
+    arr = list(map(int, arr))
     insertion_sort(arr)
     # bubble_sort(arr)
     # selection_sort(arr)
