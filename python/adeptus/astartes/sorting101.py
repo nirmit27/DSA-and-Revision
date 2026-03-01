@@ -1,27 +1,29 @@
 """
-Revision of sorting algorithms
+Sorting 101
 """
+
+from random import randint
 
 
 def bubble_sort(array: list[int]) -> None:
-    """Sorts the given **array** of integers using the **bubble sort** algorithm, that does pair-wise swaps for sorting the elements of the given **array**."""
     if len(array) < 2:
         return
 
-    check: bool = False
+    n: int = len(array)
 
-    for i in range(len(array)):
-        for j in range(0, len(array) - i - 1):
+    for i in range(n - 1):
+        check: bool = True
+
+        for j in range(n - i - 1):
             if array[j] > array[j + 1]:
-                check = True
+                check = False
                 array[j + 1], array[j] = array[j], array[j + 1]
 
-        if not check:
+        if check:
             return
 
 
 def selection_sort(array: list[int]) -> None:
-    """Sorts the given **array** of integers using the **selection sort** algorithm, which finds the correct index for each element of the given **array**."""
     if len(array) < 2:
         return
 
@@ -36,7 +38,6 @@ def selection_sort(array: list[int]) -> None:
 
 
 def insertion_sort(array: list[int]) -> None:
-    """Sorts the given **array** of integers using the **insertion sort** algorithm, which partitions the array into sorted and unsorted portions and inserts the elements from the unsorted portion into the sorted portion."""
     if len(array) < 2:
         return
 
@@ -52,20 +53,27 @@ def insertion_sort(array: list[int]) -> None:
 
 
 def main() -> None:
-    """Revision of sorting algorithms"""
+    """
     try:
         arr: list = input("Array : ").split()
         assert all(x.isdigit() or int(x) for all x in arr), "Error : Invalid input."
     except Exception as e:
         exit(print(f"\nError : {e}\n"))
+    """
+    # arr = list(map(int, arr))
 
-    arr = list(map(int, arr))
+    limit = int(1e1)
+    arr = [randint(-limit, limit + 1) for _ in range(limit)]
+
+    print(f"I/P array: {arr}")
+
     insertion_sort(arr)
     # bubble_sort(arr)
     # selection_sort(arr)
 
-    print(f"\nResult : {arr}")
+    print(f"\nO/P array: {arr}\n")
 
 
+# Driver code
 if __name__ == "__main__":
     main()
