@@ -21,7 +21,7 @@ class CBS:
                 pc = cc
                 cc = 1
 
-        # For the last valid substring ...
+        # For the last valid substring
         ans += min(pc, cc)
         return ans
 
